@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
 import type { Vehicle } from "@/lib/vehicles";
 
 type Props = { vehicle: Vehicle };
 
 export function VehicleDetailView({ vehicle: v }: Props) {
   const d = v.detail;
-  const titleSlug = v.name.toUpperCase();
 
   return (
     <>
@@ -66,97 +66,12 @@ export function VehicleDetailView({ vehicle: v }: Props) {
 
       <main className="selection:bg-primary-container selection:text-white pb-16 pt-24 font-body text-on-surface">
         <section className="mx-auto mb-12 max-w-screen-2xl px-8">
-          <div className="grid grid-cols-12 items-start gap-6">
-            <div className="group relative col-span-12 aspect-[16/9] overflow-hidden rounded-xl shadow-2xl lg:col-span-8">
-              <Image
-                src={d.mainImage}
-                alt={v.name}
-                width={1600}
-                height={900}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-                sizes="(max-width: 1024px) 100vw, 66vw"
-              />
-              <div className="glass-effect absolute bottom-0 left-0 flex w-full items-end justify-between bg-gradient-to-t from-black/60 to-transparent p-8">
-                <div>
-                  <span className="mb-2 inline-block rounded-md bg-primary-container px-3 py-1 font-label text-xs font-bold uppercase tracking-widest text-primary-fixed">
-                    {d.heroBadge}
-                  </span>
-                  <h1 className="text-5xl font-black italic tracking-tighter text-white">
-                    {titleSlug}
-                  </h1>
-                  <p className="font-label mt-2 text-sm text-white/80">
-                    {d.heroSubtitle}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="font-label text-xs uppercase tracking-widest text-white/70">
-                    Precio Especial
-                  </p>
-                  <p className="text-3xl font-black tracking-tight text-white">
-                    {d.priceLine}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-12 flex flex-col gap-6 lg:col-span-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <Image
-                    src={d.thumb1}
-                    alt={d.thumb1Alt}
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <Image
-                    src={d.thumb2}
-                    alt={d.thumb2Alt}
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 rounded-xl bg-surface-container-low p-6">
-                <h3 className="text-on-surface text-xl font-black italic">
-                  ¿Interesado en esta unidad?
-                </h3>
-                <p className="body-lg leading-relaxed text-on-surface-variant">
-                  Nuestros asesores expertos están listos para brindarte una
-                  experiencia personalizada.
-                </p>
-                <div className="space-y-3 pt-2">
-                  <button
-                    type="button"
-                    className="signature-gradient flex w-full items-center justify-center gap-2 rounded-xl py-4 text-lg font-bold text-white transition-all hover:opacity-90 active:scale-95"
-                  >
-                    <span className="material-symbols-outlined detail-icons">
-                      mail
-                    </span>
-                    Solicitar Información
-                  </button>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-surface-container-highest py-4 text-lg font-bold text-on-surface transition-all hover:bg-surface-container-high active:scale-95"
-                  >
-                    <span className="material-symbols-outlined detail-icons">
-                      calendar_today
-                    </span>
-                    Agendar Prueba de Manejo
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <VehicleHeroGallery vehicle={v} />
         </section>
 
         <section className="mb-20 bg-surface-container-low py-20">
           <div className="mx-auto max-w-screen-2xl px-8">
-            <div className="mb-12 flex flex-col items-end justify-between gap-4 md:flex-row">
+            <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row">
               <div className="max-w-2xl">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary">
                   Especificaciones
