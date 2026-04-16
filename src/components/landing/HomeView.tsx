@@ -7,7 +7,7 @@ export function HomeView() {
   return (
     <>
       <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
-        <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-8 py-4">
+        <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 sm:px-8 py-4">
           <Link
             href="/"
             className="text-2xl font-black italic tracking-tighter text-zinc-900"
@@ -41,13 +41,13 @@ export function HomeView() {
             </a>
           </div>
           <div className="flex items-center space-x-6">
-            <button
+            {/* <button
               type="button"
               className="material-symbols-outlined text-zinc-900"
               aria-label="Buscar"
             >
               search
-            </button>
+            </button> */}
             <button
               type="button"
               className="kinetic-gradient rounded-lg px-6 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
@@ -59,10 +59,10 @@ export function HomeView() {
       </nav>
 
       <main className="pt-24">
-        <header className="relative mx-auto max-w-screen-2xl overflow-hidden px-8 py-20">
-          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <header className="relative mx-auto max-w-screen-2xl overflow-hidden px-6 sm:px-8 py-32 md:py-20 pt-4 sm:pt-20">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="z-10">
-              <h1 className="text-on-surface text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
+              <h1 className="text-on-surface text-5xl sm:text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
                 Coches usados en buen estado y al{" "}
                 <i className="not-italic text-primary">mejor precio</i>
               </h1>
@@ -77,7 +77,7 @@ export function HomeView() {
         </header>
 
         <section className="bg-surface pb-16 pt-8">
-          <div className="mx-auto max-w-screen-2xl px-8">
+          <div className="mx-auto max-w-screen-2xl px-6 sm:px-8">
             <h2 className="text-on-surface mb-10 text-3xl font-black italic tracking-tighter md:text-4xl">
               Nuestros coches
             </h2>

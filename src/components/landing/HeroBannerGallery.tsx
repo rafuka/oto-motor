@@ -15,7 +15,7 @@ const AUTO_MS = 7000;
 const easeSmooth = [0.22, 1, 0.36, 1] as const;
 
 /** Stable min height so the card doesn’t resize when titles/prices differ */
-const BUBBLE_MIN_H = "min-h-[160px]";
+const BUBBLE_MIN_H = "min-h-[130px] sm:min-h-[160px]";
 
 export function HeroBannerGallery({ items }: Props) {
   const [index, setIndex] = useState(0);
@@ -74,19 +74,19 @@ export function HeroBannerGallery({ items }: Props) {
   /** Bubble: opacity only; zIndex keeps the incoming slide on top for clicks during crossfade */
   const bubbleMotion = reduceMotion
     ? {
-        initial: { opacity: 1, y: 30, zIndex: 2 },
-        animate: { opacity: 1, y: 0, zIndex: 2 },
+        initial: { opacity: 1, zIndex: 2 },
+        animate: { opacity: 1, zIndex: 2 },
         exit: { opacity: 1, zIndex: 0 },
       }
     : {
-        initial: { opacity: 0, y: 30, zIndex: 2 },
-        animate: { opacity: 1, y: 0, zIndex: 2 },
+        initial: { opacity: 0, zIndex: 2 },
+        animate: { opacity: 1, zIndex: 2 },
         exit: { opacity: 0, zIndex: 0 },
       };
 
   return (
-    <div className="relative">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
+    <div className="relative -mx-6 sm:mx-0">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-none sm:rounded-2xl shadow-2xl">
         <AnimatePresence initial={false} mode="sync">
           <motion.div
             key={current.id}
@@ -129,7 +129,7 @@ export function HeroBannerGallery({ items }: Props) {
               </span>
             </button>
             <div
-              className="absolute bottom-3 left-1/2 z-[2] flex -translate-x-1/2 gap-1.5"
+              className="hidden sm:flex absolute bottom-3 left-1/2 z-[2] -translate-x-1/2 gap-1.5"
               role="tablist"
               aria-label="Seleccionar imagen del banner"
             >
@@ -154,50 +154,50 @@ export function HeroBannerGallery({ items }: Props) {
       </div>
 
       {/* Shell stays one size; slides crossfade in a single overlay — no layout stack */}
-      <AnimatePresence >
-      <motion.div
-        key={current.id}
-        className="absolute -bottom-6 -left-6 z-[3] w-[300px]"
-        style={{ contain: "layout style" }}
-        transition={bubbleTransition}
-        {...bubbleMotion}
-      >
-        <Link href={`/vehiculo/${current.id}`}>
-          <div className="kinetic-gradient text-white relative overflow-hidden rounded-xl shadow-xl">
-            <div  className={`relative ${BUBBLE_MIN_H} w-full`}>
-                <div className="absolute inset-0 flex flex-col justify-between p-6">
-                  <p className="font-label text-xs font-medium uppercase tracking-widest opacity-80">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-xl font-bold leading-tight">
-                    {current.name}
-                  </p>
-                  <div className="flex items-center mt-3 justify-between">
-                    <div className="flex items-center font-label text-sm">
-                      <span className="material-symbols-outlined mr-1 text-[18px]">
-                        payments
+      <AnimatePresence>
+        <motion.div
+          key={current.id}
+          className="absolute -bottom-20 left-[50%] -translate-x-[50%] lg:-bottom-10 lg:-left-10 lg:translate-x-0 w-[300px] z-[3]"
+          style={{ contain: "layout style" }}
+          transition={bubbleTransition}
+          {...bubbleMotion}
+        >
+          <Link href={`/vehiculo/${current.id}`}>
+            <div className="kinetic-gradient text-white relative overflow-hidden rounded-xl shadow-xl">
+              <div className={`relative ${BUBBLE_MIN_H} w-full`}>
+                  <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
+                    <p className="font-label text-[10px] sm:text-xs font-medium uppercase tracking-widest opacity-80">
+                      {label}
+                    </p>
+                    <p className="mt-1 text-md sm:text-xl font-bold leading-tight">
+                      {current.name}
+                    </p>
+                    <div className="flex items-center mt-1 sm:mt-3 justify-between">
+                      <div className="flex items-center font-label text-sm">
+                        <span className="material-symbols-outlined mr-1 text-[18px]">
+                          payments
+                        </span>
+                        {current.price}
+                      </div>
+                      <div className="font-label text-xs opacity-85">
+                        {current.year} · {current.km}
+                      </div>
+                    </div>
+                    <span
+                      
+                      className="font-label self-end mt-3 inline-flex items-center text-[10px] sm:text-xs font-bold uppercase tracking-wide text-white decoration-white/80 underline-offset-4 transition-opacity hover:opacity-90"
+                    >
+                      Ver más
+                      <span className="material-symbols-outlined ml-0.5 text-[14px] sm:text-[18px]">
+                        arrow_forward
                       </span>
-                      {current.price}
-                    </div>
-                    <div className="font-label text-xs opacity-85">
-                      {current.year} · {current.km}
-                    </div>
-                  </div>
-                  <span
-                    
-                    className="font-label self-end mt-3 inline-flex items-center text-xs font-bold uppercase tracking-wide text-white decoration-white/80 underline-offset-4 transition-opacity hover:opacity-90"
-                  >
-                    Ver más
-                    <span className="material-symbols-outlined ml-0.5 text-[18px]">
-                      arrow_forward
                     </span>
-                  </span>
-                </div>
+                  </div>
+              </div>
             </div>
-          </div>
-        </Link>
-      </motion.div>
-            </AnimatePresence>
+          </Link>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

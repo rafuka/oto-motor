@@ -45,7 +45,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <button
+            {/* <button
               type="button"
               className="p-2 text-zinc-600 transition-all duration-300 hover:opacity-80 active:scale-95"
               aria-label="Buscar"
@@ -53,7 +53,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               <span className="material-symbols-outlined detail-icons">
                 search
               </span>
-            </button>
+            </button> */}
             <button
               type="button"
               className="signature-gradient rounded-xl px-6 py-2 font-bold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:opacity-80 active:scale-95"
@@ -69,7 +69,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
           <VehicleHeroGallery vehicle={v} />
         </section>
 
-        <section className="mb-20 bg-surface-container-low py-20">
+        <section className="mb-20 bg-surface-container-low py-4 sm:py-20">
           <div className="mx-auto max-w-screen-2xl px-8">
             <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row">
               <div className="max-w-2xl">
