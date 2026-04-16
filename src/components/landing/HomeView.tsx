@@ -12,7 +12,7 @@ export function HomeView() {
             href="/"
             className="text-2xl font-black italic tracking-tighter text-zinc-900"
           >
-            OTO MOTOR
+            <Image src="/oto_motor_logo.jpg" alt="OTO MOTOR" width={48} height={48} />
           </Link>
           <div className="hidden items-center space-x-8 md:flex">
             <Link
