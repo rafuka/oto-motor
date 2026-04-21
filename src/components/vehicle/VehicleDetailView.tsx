@@ -3,6 +3,7 @@ import Link from "next/link";
 import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
 import type { Vehicle } from "@/lib/vehicles";
 
+
 type Props = { vehicle: Vehicle };
 
 export function VehicleDetailView({ vehicle: v }: Props) {
@@ -12,11 +13,8 @@ export function VehicleDetailView({ vehicle: v }: Props) {
     <>
       <nav className="fixed top-0 z-50 w-full bg-white/70 shadow-sm backdrop-blur-xl dark:bg-zinc-950/70">
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-8 py-4">
-          <Link
-            href="/"
-            className="font-['Plus_Jakarta_Sans'] text-2xl font-black italic tracking-tighter text-zinc-900 dark:text-white"
-          >
-            OTO MOTOR
+          <Link href="/">
+            <Image src="/oto_motor_logo.jpg" alt="OTO MOTOR" width={48} height={48} />
           </Link>
           <div className="hidden items-center gap-8 md:flex">
             <Link
@@ -66,6 +64,48 @@ export function VehicleDetailView({ vehicle: v }: Props) {
 
       <main className="selection:bg-primary-container selection:text-white pb-16 pt-24 font-body text-on-surface">
         <section className="mx-auto mb-12 max-w-screen-2xl px-8">
+          {/* Title + CTA row */}
+          <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-start">
+            <div className="md:flex-1">
+              <span className="mb-2 inline-block rounded-md bg-primary-container px-3 py-1 font-label text-xs font-bold uppercase tracking-widest text-primary">
+                {d.heroBadge}
+              </span>
+              <h1 className="text-on-surface mt-2 text-4xl font-black italic tracking-tighter sm:text-5xl">
+                {v.name.toUpperCase()}
+              </h1>
+              <p className="font-label mt-2 text-sm text-on-surface-variant">
+                {d.heroSubtitle}
+              </p>
+              <p className="mt-3 text-2xl font-black text-primary">{d.priceLine}</p>
+            </div>
+
+            <div className="w-full space-y-4 rounded-xl bg-surface-container-low p-6 md:flex-1">
+              <h3 className="text-on-surface text-xl font-black italic">
+                ¿Interesado en esta unidad?
+              </h3>
+              <p className="body-lg leading-relaxed text-on-surface-variant">
+                Nuestros asesores expertos están listos para brindarte una
+                experiencia personalizada.
+              </p>
+              <div className="pt-2 lg:flex lg:items-center lg:gap-2">
+                <button
+                  type="button"
+                  className="signature-gradient flex w-full items-center justify-center gap-2 rounded-xl py-4 text-base font-bold text-white transition-all hover:opacity-90 active:scale-95"
+                >
+                  <span className="material-symbols-outlined detail-icons">mail</span>
+                  Solicitar Información
+                </button>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-surface-container-highest py-4 text-base font-bold text-on-surface transition-all hover:bg-surface-container-high active:scale-95 mt-0"
+                >
+                  <span className="material-symbols-outlined detail-icons">calendar_today</span>
+                  Agendar Prueba de Manejo
+                </button>
+              </div>
+            </div>
+          </div>
+
           <VehicleHeroGallery vehicle={v} />
         </section>
 
