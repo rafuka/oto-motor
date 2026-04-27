@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
 import { HeroBannerGallery } from "@/components/landing/HeroBannerGallery";
 import { GridVehicle } from "@/components/landing/GridVehicle";
+import { VehiclePagination } from "@/components/landing/VehiclePagination";
 import { vehicles, getBrand } from "@/lib/vehicles";
 import { VehicleFilters } from "@/components/landing/VehicleFilters";
+import { SiteNav } from "@/components/shared/SiteNav";
 
 const PAGE_SIZE = 12;
 
@@ -37,69 +37,9 @@ export function HomeView({ page, filters }: Props) {
   const safePage = Math.min(Math.max(1, page), totalPages);
   const pageVehicles = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
-  function paginationHref(p: number) {
-    const params = new URLSearchParams({ page: String(p) });
-    if (filters.marca) params.set("marca", filters.marca);
-    if (filters.km) params.set("km", filters.km);
-    if (filters.yearFrom) params.set("yearFrom", filters.yearFrom);
-    if (filters.yearTo) params.set("yearTo", filters.yearTo);
-    if (filters.fuel) params.set("fuel", filters.fuel);
-    return `/?${params.toString()}`;
-  }
-
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
-        <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 sm:px-8 py-4">
-          <Link
-            href="/"
-            className="text-2xl font-black italic tracking-tighter text-zinc-900"
-          >
-            <Image src="/oto_motor_logo.jpg" alt="OTO MOTOR" width={48} height={48} />
-          </Link>
-          <div className="hidden items-center space-x-8 md:flex">
-            <Link
-              href="/"
-              className="border-b-2 border-red-600 font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-red-600"
-            >
-              Inventario
-            </Link>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600"
-              href="#"
-            >
-              Financiamiento
-            </a>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600"
-              href="#"
-            >
-              Nosotros
-            </a>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600"
-              href="#"
-            >
-              Contacto
-            </a>
-          </div>
-          <div className="flex items-center space-x-6">
-            {/* <button
-              type="button"
-              className="material-symbols-outlined text-zinc-900"
-              aria-label="Buscar"
-            >
-              search
-            </button> */}
-            <button
-              type="button"
-              className="kinetic-gradient rounded-lg px-6 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
-            >
-              Agendar Cita
-            </button>
-          </div>
-        </div>
-      </nav>
+      <SiteNav activePage="inventario" />
 
       <main className="pt-24">
         <header className="relative mx-auto max-w-screen-2xl overflow-hidden px-6 sm:px-8 py-32 md:py-20 pt-4 sm:pt-20">
@@ -147,60 +87,7 @@ export function HomeView({ page, filters }: Props) {
                   </div>
                 )}
 
-                {totalPages > 1 && (
-                  <nav
-                    className="mt-16 flex items-center justify-center space-x-2"
-                    aria-label="Paginación"
-                  >
-                    {safePage > 1 ? (
-                      <Link
-                        href={paginationHref(safePage - 1)}
-                        className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
-                        aria-label="Página anterior"
-                      >
-                        <span className="material-symbols-outlined">chevron_left</span>
-                      </Link>
-                    ) : (
-                      <span className="flex h-12 w-12 cursor-not-allowed items-center justify-center rounded-lg border border-outline-variant opacity-40">
-                        <span className="material-symbols-outlined">chevron_left</span>
-                      </span>
-                    )}
-
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) =>
-                      n === safePage ? (
-                        <span
-                          key={n}
-                          aria-current="page"
-                          className="kinetic-gradient flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-                        >
-                          {n}
-                        </span>
-                      ) : (
-                        <Link
-                          key={n}
-                          href={paginationHref(n)}
-                          className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant font-bold text-on-surface transition-colors hover:bg-surface-container"
-                        >
-                          {n}
-                        </Link>
-                      )
-                    )}
-
-                    {safePage < totalPages ? (
-                      <Link
-                        href={paginationHref(safePage + 1)}
-                        className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
-                        aria-label="Página siguiente"
-                      >
-                        <span className="material-symbols-outlined">chevron_right</span>
-                      </Link>
-                    ) : (
-                      <span className="flex h-12 w-12 cursor-not-allowed items-center justify-center rounded-lg border border-outline-variant opacity-40">
-                        <span className="material-symbols-outlined">chevron_right</span>
-                      </span>
-                    )}
-                  </nav>
-                )}
+                <VehiclePagination totalPages={totalPages} currentPage={safePage} />
               </div>
             </div>
           </div>

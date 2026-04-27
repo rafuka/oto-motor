@@ -3,7 +3,8 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
+import { parseAsInteger, useQueryState } from "nuqs";
 import { formatKm } from "@/lib/vehicles";
 import type { Vehicle } from "@/lib/vehicles";
 
@@ -19,10 +20,14 @@ const easeSmooth = [0.22, 1, 0.36, 1] as const;
 const BUBBLE_MIN_H = "min-h-[130px] sm:min-h-[160px]";
 
 export function HeroBannerGallery({ items }: Props) {
-  const [index, setIndex] = useState(0);
+  const [rawIndex, setIndex] = useQueryState(
+    "slide",
+    parseAsInteger.withDefault(0).withOptions({ history: "replace", shallow: true }),
+  );
   const reduceMotion = useReducedMotion();
   const safeLen = items.length;
-  const current = safeLen > 0 ? items[index % safeLen] : null;
+  const index = safeLen > 0 ? rawIndex % safeLen : 0;
+  const current = safeLen > 0 ? items[index] : null;
 
   const transition = useMemo(
     () =>
@@ -51,7 +56,7 @@ export function HeroBannerGallery({ items }: Props) {
       if (safeLen === 0) return;
       setIndex((i) => (i + delta + safeLen) % safeLen);
     },
-    [safeLen],
+    [safeLen, setIndex],
   );
 
   useEffect(() => {

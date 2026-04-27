@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
+import { SiteNav } from "@/components/shared/SiteNav";
 import type { Vehicle } from "@/lib/vehicles";
 
 
@@ -11,56 +11,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-white/70 shadow-sm backdrop-blur-xl dark:bg-zinc-950/70">
-        <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-8 py-4">
-          <Link href="/">
-            <Image src="/oto_motor_logo.jpg" alt="OTO MOTOR" width={48} height={48} />
-          </Link>
-          <div className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/"
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600 dark:text-zinc-400"
-            >
-              Inventario
-            </Link>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600 dark:text-zinc-400"
-              href="#"
-            >
-              Financiamiento
-            </a>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600 dark:text-zinc-400"
-              href="#"
-            >
-              Nosotros
-            </a>
-            <a
-              className="font-['Plus_Jakarta_Sans'] tracking-tight text-zinc-600 transition-colors hover:text-red-600 dark:text-zinc-400"
-              href="#"
-            >
-              Contacto
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            {/* <button
-              type="button"
-              className="p-2 text-zinc-600 transition-all duration-300 hover:opacity-80 active:scale-95"
-              aria-label="Buscar"
-            >
-              <span className="material-symbols-outlined detail-icons">
-                search
-              </span>
-            </button> */}
-            <button
-              type="button"
-              className="signature-gradient rounded-xl px-6 py-2 font-bold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:opacity-80 active:scale-95"
-            >
-              Agendar Cita
-            </button>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <main className="selection:bg-primary-container selection:text-white pb-16 pt-24 font-body text-on-surface">
         <section className="mx-auto mb-12 max-w-screen-2xl px-8">
