@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -39,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${inter.variable} bg-surface font-body text-on-surface antialiased`}
       >
-        {children}
+        <NuqsAdapter>{children}</NuqsAdapter>
       </body>
     </html>
   );

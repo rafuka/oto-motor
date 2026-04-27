@@ -2,9 +2,51 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroBannerGallery } from "@/components/landing/HeroBannerGallery";
 import { GridVehicle } from "@/components/landing/GridVehicle";
-import { vehicles } from "@/lib/vehicles";
+import { vehicles, getBrand } from "@/lib/vehicles";
+import { VehicleFilters } from "@/components/landing/VehicleFilters";
 
-export function HomeView() {
+const PAGE_SIZE = 12;
+
+type FilterState = { marca: string; km: string; yearFrom: string; yearTo: string; fuel: string };
+type Props = { page: number; filters: FilterState };
+
+function parseKmRange(range: string): [number, number] {
+  if (range === "120000+") return [120001, Infinity];
+  const [lo, hi] = range.split("-").map(Number);
+  return [lo, hi];
+}
+
+export function HomeView({ page, filters }: Props) {
+  const allBrands = [...new Set(vehicles.map((v) => getBrand(v.name)))].sort();
+  const allFuels = [...new Set(vehicles.map((v) => v.fuel))].sort();
+  const allYears = [...new Set(vehicles.map((v) => parseInt(v.year)))].sort((a, b) => a - b);
+
+  const filtered = vehicles.filter((v) => {
+    if (filters.marca && getBrand(v.name) !== filters.marca) return false;
+    if (filters.km) {
+      const [lo, hi] = parseKmRange(filters.km);
+      if (v.km < lo || v.km > hi) return false;
+    }
+    if (filters.yearFrom && parseInt(v.year) < parseInt(filters.yearFrom)) return false;
+    if (filters.yearTo && parseInt(v.year) > parseInt(filters.yearTo)) return false;
+    if (filters.fuel && v.fuel !== filters.fuel) return false;
+    return true;
+  });
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const safePage = Math.min(Math.max(1, page), totalPages);
+  const pageVehicles = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  function paginationHref(p: number) {
+    const params = new URLSearchParams({ page: String(p) });
+    if (filters.marca) params.set("marca", filters.marca);
+    if (filters.km) params.set("km", filters.km);
+    if (filters.yearFrom) params.set("yearFrom", filters.yearFrom);
+    if (filters.yearTo) params.set("yearTo", filters.yearTo);
+    if (filters.fuel) params.set("fuel", filters.fuel);
+    return `/?${params.toString()}`;
+  }
+
   return (
     <>
       <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
@@ -84,103 +126,81 @@ export function HomeView() {
             </h2>
 
             <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
-              <aside className="w-full shrink-0 rounded-xl bg-surface-container-low p-6 lg:sticky lg:top-24 lg:w-72 lg:max-w-[18rem]">
-                <p className="font-label mb-6 text-xs font-bold uppercase tracking-widest text-secondary">
-                  Filtros
-                </p>
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <label className="font-label mb-2 block text-xs font-bold uppercase text-secondary">
-                      Marca
-                    </label>
-                    <select className="font-label w-full rounded-lg border-none bg-surface-container-lowest p-3 text-on-surface focus:ring-2 focus:ring-primary/40">
-                      <option>Todas las marcas</option>
-                      <option>Porsche</option>
-                      <option>BMW</option>
-                      <option>Audi</option>
-                      <option>Mercedes-Benz</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="font-label mb-2 block text-xs font-bold uppercase text-secondary">
-                      Tipo de carrocería
-                    </label>
-                    <select className="font-label w-full rounded-lg border-none bg-surface-container-lowest p-3 text-on-surface focus:ring-2 focus:ring-primary/40">
-                      <option>Cualquier tipo</option>
-                      <option>Sedán</option>
-                      <option>SUV</option>
-                      <option>Coupé</option>
-                      <option>Convertible</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="font-label mb-2 block text-xs font-bold uppercase text-secondary">
-                      Rango de precio
-                    </label>
-                    <select className="font-label w-full rounded-lg border-none bg-surface-container-lowest p-3 text-on-surface focus:ring-2 focus:ring-primary/40">
-                      <option>Cualquier precio</option>
-                      <option>€20k - €50k</option>
-                      <option>€50k - €100k</option>
-                      <option>€100k+</option>
-                    </select>
-                  </div>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-center rounded-lg bg-on-surface px-4 py-3 font-bold text-white transition-colors hover:bg-zinc-800"
-                  >
-                    <span className="material-symbols-outlined mr-2 text-[20px]">
-                      tune
-                    </span>
-                    Filtrar Resultados
-                  </button>
-                </div>
-              </aside>
+              <VehicleFilters
+                brands={allBrands}
+                fuels={allFuels}
+                years={allYears}
+              />
 
               <div className="min-w-0 flex-1">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
-                  {vehicles.map((v) => (
+                  {pageVehicles.map((v) => (
                     <GridVehicle key={v.id} vehicle={v} />
                   ))}
                 </div>
 
-                <div className="mt-16 flex items-center justify-center space-x-2">
-                  <button
-                    type="button"
-                    className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
-                    aria-label="Anterior"
+                {filtered.length === 0 && (
+                  <div className="py-20 text-center text-on-surface-variant">
+                    <span className="material-symbols-outlined mb-4 block text-5xl">search_off</span>
+                    <p className="text-lg font-semibold">Sin resultados</p>
+                    <p className="mt-1 text-sm">Prueba ajustando los filtros.</p>
+                  </div>
+                )}
+
+                {totalPages > 1 && (
+                  <nav
+                    className="mt-16 flex items-center justify-center space-x-2"
+                    aria-label="Paginación"
                   >
-                    <span className="material-symbols-outlined">
-                      chevron_left
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="kinetic-gradient flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
-                  >
-                    1
-                  </button>
-                  <button
-                    type="button"
-                    className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant font-bold text-on-surface transition-colors hover:bg-surface-container"
-                  >
-                    2
-                  </button>
-                  <button
-                    type="button"
-                    className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant font-bold text-on-surface transition-colors hover:bg-surface-container"
-                  >
-                    3
-                  </button>
-                  <button
-                    type="button"
-                    className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
-                    aria-label="Siguiente"
-                  >
-                    <span className="material-symbols-outlined">
-                      chevron_right
-                    </span>
-                  </button>
-                </div>
+                    {safePage > 1 ? (
+                      <Link
+                        href={paginationHref(safePage - 1)}
+                        className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
+                        aria-label="Página anterior"
+                      >
+                        <span className="material-symbols-outlined">chevron_left</span>
+                      </Link>
+                    ) : (
+                      <span className="flex h-12 w-12 cursor-not-allowed items-center justify-center rounded-lg border border-outline-variant opacity-40">
+                        <span className="material-symbols-outlined">chevron_left</span>
+                      </span>
+                    )}
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) =>
+                      n === safePage ? (
+                        <span
+                          key={n}
+                          aria-current="page"
+                          className="kinetic-gradient flex h-12 w-12 items-center justify-center rounded-lg font-bold text-white"
+                        >
+                          {n}
+                        </span>
+                      ) : (
+                        <Link
+                          key={n}
+                          href={paginationHref(n)}
+                          className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant font-bold text-on-surface transition-colors hover:bg-surface-container"
+                        >
+                          {n}
+                        </Link>
+                      )
+                    )}
+
+                    {safePage < totalPages ? (
+                      <Link
+                        href={paginationHref(safePage + 1)}
+                        className="flex h-12 w-12 items-center justify-center rounded-lg border border-outline-variant transition-colors hover:bg-surface-container"
+                        aria-label="Página siguiente"
+                      >
+                        <span className="material-symbols-outlined">chevron_right</span>
+                      </Link>
+                    ) : (
+                      <span className="flex h-12 w-12 cursor-not-allowed items-center justify-center rounded-lg border border-outline-variant opacity-40">
+                        <span className="material-symbols-outlined">chevron_right</span>
+                      </span>
+                    )}
+                  </nav>
+                )}
               </div>
             </div>
           </div>

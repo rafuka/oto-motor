@@ -16,13 +16,8 @@ export function VehicleHeroGallery({ vehicle: v }: Props) {
   const reduceMotion = useReducedMotion();
 
   const slides = useMemo(
-    () => [
-      { src: d.mainImage, alt: v.name, key: "main" },
-      { src: d.thumb1, alt: d.thumb1Alt, key: "thumb1" },
-      { src: d.thumb2, alt: d.thumb2Alt, key: "thumb2" },
-      { src: d.narrativeImage, alt: d.narrativeImageAlt, key: "narrative" },
-    ],
-    [d.mainImage, d.thumb1, d.thumb2, d.narrativeImage, v.name, d.thumb1Alt, d.thumb2Alt, d.narrativeImageAlt],
+    () => d.images.map((img) => ({ src: img, alt: v.name, key: img })),
+    [d.images, v.name],
   );
 
   const [index, setIndex] = useState(0);

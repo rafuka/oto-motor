@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { formatKm } from "@/lib/vehicles";
 import type { Vehicle } from "@/lib/vehicles";
 
 type Props = {
@@ -43,7 +44,7 @@ export function GridVehicle({ vehicle: v }: Props) {
             {v.year}
           </span>
           <span className="rounded-md bg-secondary-container px-3 py-1 font-label text-[11px] font-semibold text-on-secondary-container">
-            {v.km}
+            {formatKm(v.km)}
           </span>
           <span className="rounded-md bg-secondary-container px-3 py-1 font-label text-[11px] font-semibold text-on-secondary-container">
             {v.tag3}

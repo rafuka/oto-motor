@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { formatKm } from "@/lib/vehicles";
 import type { Vehicle } from "@/lib/vehicles";
 
 type Props = {
@@ -180,7 +181,7 @@ export function HeroBannerGallery({ items }: Props) {
                         {current.price}
                       </div>
                       <div className="font-label text-xs opacity-85">
-                        {current.year} · {current.km}
+                        {current.year} · {formatKm(current.km)}
                       </div>
                     </div>
                     <span
