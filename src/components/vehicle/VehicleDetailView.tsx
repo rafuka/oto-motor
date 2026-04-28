@@ -121,8 +121,8 @@ export function VehicleDetailView({ vehicle: v }: Props) {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-screen-2xl grid-cols-12 items-center gap-16 px-8">
-          <div className="order-2 col-span-12 lg:order-1 lg:col-span-5">
+        <section className="mx-auto grid max-w-screen-2xl grid-cols-1 lg:grid-cols-12 items-center gap-16 px-8">
+          <div className="order-2 col-span-1 lg:order-1 lg:col-span-5">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">
               La Experiencia
             </span>
@@ -156,15 +156,13 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               </div>
             </div>
           </div>
-          <div className="relative order-1 col-span-12 lg:order-2 lg:col-span-7">
-            <div className="absolute -right-12 -top-12 -z-10 h-full w-full rounded-full bg-primary-container/5" />
-            <div className="relative overflow-hidden rounded-xl shadow-[0px_40px_80px_rgba(185,0,39,0.15)]">
+          <div className="order-1 col-span-1 lg:order-2 lg:col-span-7">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-[0px_40px_80px_rgba(185,0,39,0.15)]">
               <Image
                 src={d.narrativeImage}
                 alt={d.narrativeImageAlt}
-                width={1200}
-                height={1200}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 58vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
@@ -180,8 +178,8 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               OTO MOTOR
             </div>
             <p className="font-['Inter'] text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-              Elevando el estándar de la industria automotriz en México a través
-              de la curaduría de los mejores ejemplares del mundo.
+              Tu destino premium para vehículos de alto rendimiento en España.
+              Experiencia y confianza en cada kilómetro.
             </p>
           </div>
           <div className="flex flex-col gap-3">
@@ -213,13 +211,13 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               <span className="material-symbols-outlined detail-icons scale-75 text-primary">
                 location_on
               </span>
-              Av. de la Industria 450, Ciudad de México
+              C. de las Islas Cíes, 4, 28970 Humanes de Madrid, Madrid
             </div>
             <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
               <span className="material-symbols-outlined detail-icons scale-75 text-primary">
                 call
               </span>
-              +52 (55) 1234 5678
+              +34 916 123 456
             </div>
           </div>
         </div>
