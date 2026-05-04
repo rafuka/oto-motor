@@ -36,7 +36,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "alfa-romeo-stelvio-azul",
     name: "Alfa Romeo Stelvio Q4",
-    price: "Consultar",
+    price: "21.000 €",
     badge: { text: "Nuevo Ingreso", variant: "primary" },
     year: "2019",
     km: 122000,
@@ -70,7 +70,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Q4 AWD",
       heroSubtitle: "AÑO 2019 • 122.000 KM • SUV PREMIUM",
-      priceLine: "Consultar precio",
+      priceLine: "21.000 €",
       story: [
         "El Alfa Romeo Stelvio Q4 combina el diseño italiano más puro con un carácter deportivo que pocos SUV pueden igualar. Su motor 2.2 diésel ofrece eficiencia sin renunciar a la potencia.",
         "Equipado con sistemas de seguridad avanzados, frenado automático, control de cambio de carril y apertura eléctrica del portón, es un vehículo completo para el uso diario más exigente.",
@@ -102,7 +102,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "alfa-romeo-stelvio-blanco",
     name: "Alfa Romeo Stelvio Q4",
-    price: "Consultar",
+    price: "23.990 €",
     year: "2020",
     km: 80446,
     tag3: "Automático 8v",
@@ -141,7 +141,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Q4 AWD",
       heroSubtitle: "AÑO 2020 • 80.446 KM • SUV PREMIUM",
-      priceLine: "Consultar precio",
+      priceLine: "23.990 €",
       story: [
         "El Alfa Romeo Stelvio en blanco con interior rojo es una combinación que detiene miradas. Motor gasolina 2.0 de 200 CV con tracción Q4 para una conducción deportiva en cualquier situación.",
         "Tapicería de cuero, climatizador bizona, GPS integrado y retrovisores calefactados hacen de este Stelvio un SUV completo y sofisticado para el día a día.",
@@ -173,7 +173,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "audi-q2-negro",
     name: "Audi Q2 30 TFSI",
-    price: "Consultar",
+    price: "25.990 €",
     badge: { text: "Casi Nuevo", variant: "primary" },
     year: "2025",
     km: 3000,
@@ -209,7 +209,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Casi Nuevo",
       heroSubtitle: "AÑO 2025 • 3.000 KM • SUV COMPACTO",
-      priceLine: "Consultar precio",
+      priceLine: "25.990 €",
       story: [
         "El Audi Q2 2025 es prácticamente nuevo, con apenas 3.000 km. Diseño compacto y dinámico con toda la tecnología Audi de última generación.",
         "Faros LED, Climatronic, cámara trasera y aviso de salida de carril hacen de este Q2 el SUV urbano perfecto para quien exige lo mejor sin compromisos.",
@@ -241,7 +241,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "audi-q3-s-line",
     name: "Audi Q3 S line",
-    price: "Consultar",
+    price: "29.990 €",
     year: "2020",
     km: 99444,
     tag3: "Automático",
@@ -279,7 +279,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "S line",
       heroSubtitle: "AÑO 2020 • 99.444 KM • SUV SPORT",
-      priceLine: "Consultar precio",
+      priceLine: "29.990 €",
       story: [
         "El Audi Q3 S line combina estética deportiva y equipamiento premium. Su motor 2.0 TFSI de 230 CV y caja automática ofrecen una conducción fluida y enérgica en cualquier vía.",
         "Cuadro digital, climatizador de 2 zonas, sistema de navegación y sensores delanteros y traseros hacen de este Q3 un SUV completo para cualquier necesidad.",
@@ -311,7 +311,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "audi-q7-55-tfsie",
     name: "Audi Q7 55 TFSIe quattro",
-    price: "Consultar",
+    price: "42.000 €",
     badge: { text: "Híbrido enchufable", variant: "dark" },
     year: "2021",
     km: 82304,
@@ -345,7 +345,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Híbrido Enchufable",
       heroSubtitle: "AÑO 2021 • 82.304 KM • SUV 7 PLAZAS",
-      priceLine: "Consultar precio",
+      priceLine: "42.000 €",
       story: [
         "El Audi Q7 55 TFSIe es un SUV de 7 plazas que combina un V6 gasolina de 381 CV con un motor eléctrico, obteniendo etiqueta 0 y prestaciones de alto nivel.",
         "Virtual cockpit, Apple CarPlay, Android Auto, asientos de cuero eléctricos, keyless entry y start, faros LED y sistema de navegación lo convierten en el SUV familiar definitivo.",
@@ -377,7 +377,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "audi-rs-q3-sportback",
     name: "Audi RSQ3 Sportback",
-    price: "Consultar",
+    price: "69.800 €",
     badge: { text: "Casi Nuevo", variant: "primary" },
     year: "2024",
     km: 23211,
@@ -419,7 +419,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "RS Sportback",
       heroSubtitle: "AÑO 2024 • 23.211 KM • SUV SPORT",
-      priceLine: "Consultar precio",
+      priceLine: "69.800 €",
       story: [
         "El Audi RSQ3 Sportback 2024 es prácticamente nuevo, con apenas 23.211 km. Su motor 2.5 TFSI de 5 cilindros y 400 CV con tracción quattro ofrece una experiencia de conducción inigualable en su segmento.",
         "Equipado con faros MATRIX LED, techo panorámico, escape deportivo RS, frenos RS en rojo, sistema de sonido SONOS, cámaras 360°, Audi Drive Select y Keyless Go, representa lo mejor de la gama RS de Audi.",
@@ -451,7 +451,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "audi-s6-avant",
     name: "Audi S6 Avant",
-    price: "Consultar",
+    price: "39.490 €",
     year: "2021",
     km: 99000,
     tag3: "Automático",
@@ -490,7 +490,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "S6 Avant",
       heroSubtitle: "AÑO 2021 • 99.000 KM • FAMILIAR SPORT",
-      priceLine: "Consultar precio",
+      priceLine: "39.490 €",
       story: [
         "El Audi S6 Avant combina el carácter deportivo de la línea S con la practicidad de un familiar. Su motor 3.0 TDI de 349 CV ofrece prestaciones excepcionales con una eficiencia sobresaliente en cualquier trayecto.",
         "Climatizador de 4 zonas, virtual cockpit, asientos deportivos de cuero alcántara, suspensión neumática regulable, faros LED, Apple CarPlay, Android Auto y portón eléctrico hacen de este S6 un vehículo sin compromisos.",
@@ -522,7 +522,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bentley-flying-spur-w12",
     name: "Bentley Flying Spur W12",
-    price: "Consultar",
+    price: "65.000 €",
     badge: { text: "Gran Turismo", variant: "dark" },
     year: "2014",
     km: 84638,
@@ -562,7 +562,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "W12 Biturbo",
       heroSubtitle: "AÑO 2014 • 84.638 KM • GRAN TURISMO",
-      priceLine: "Consultar precio",
+      priceLine: "65.000 €",
       story: [
         "El Bentley Flying Spur W12 en azul intenso es la definición del lujo en movimiento. Su motor W12 biturbo de 625 CV propulsa este sedán de representación con una suavidad y silencio absolutamente inigualables.",
         "Asientos con función masaje, calefacción y ventilación, sistema de sonido Naim for Bentley, climatizador de 4 zonas, acceso keyless, suspensión neumática y cortinillas eléctricas traseras definen un estándar de refinamiento sin par.",
@@ -594,7 +594,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bentley-flying-spur-hybrid",
     name: "Bentley Flying Spur Hybrid",
-    price: "Consultar",
+    price: "200.000 €",
     badge: { text: "Híbrido enchufable", variant: "dark" },
     year: "2023",
     km: 22565,
@@ -638,7 +638,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Hybrid PHEV",
       heroSubtitle: "AÑO 2023 • 22.565 KM • GRAN TURISMO",
-      priceLine: "Consultar precio",
+      priceLine: "200.000 €",
       story: [
         "El Bentley Flying Spur Hybrid 2023 representa el futuro del lujo con consciencia. Con 680 CV combinados y etiqueta de vehículo enchufable, une la eficiencia eléctrica con las prestaciones de un gran turismo de referencia.",
         "Asientos de masaje con calefacción y ventilación, tapicería artesanal, climatización de 4 zonas, cámara 360°, reloj analógico Bentley, suspensión adaptativa y pantallas traseras digitales convierten cada trayecto en una experiencia única.",
@@ -670,7 +670,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bmw-m3-e46",
     name: "BMW M3 E46",
-    price: "Consultar",
+    price: "29.990 €",
     badge: { text: "Clásico Deportivo", variant: "dark" },
     year: "2002",
     km: 273000,
@@ -708,7 +708,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "E46 M3",
       heroSubtitle: "AÑO 2002 • 273.000 KM • COUPÉ DEPORTIVO",
-      priceLine: "Consultar precio",
+      priceLine: "29.990 €",
       story: [
         "El BMW M3 E46 Phoenix Yellow es un icono del automovilismo deportivo. Su motor S54 de 3.2 litros y 343 CV, desarrollado directamente de la competición, ofrece una pureza de conducción que pocos coches pueden igualar.",
         "Equipado con suspensión deportiva M, diferencial autoblocante M, frenos M, asientos deportivos en cuero Nappa con bordados M, volante M multifunción y transmisión SMG, este M3 es un coleccionable en estado puro.",
@@ -740,7 +740,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bmw-m4-competition-blanco",
     name: "BMW M4 Competition",
-    price: "Consultar",
+    price: "70.000 €",
     badge: { text: "Competition", variant: "dark" },
     year: "2021",
     km: 98500,
@@ -780,7 +780,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Competition",
       heroSubtitle: "510 CV de pura adrenalina",
-      priceLine: "Consultar precio",
+      priceLine: "70.000 €",
       story: [
         "El BMW M4 Competition en blanco alpino es la expresión más pura del rendimiento en circuito aplicado a la carretera. Su motor S58 biturbo de 510 CV y tracción trasera ofrecen una experiencia de conducción sin igual.",
         "Equipado con el Pack M Competition, techo de fibra de carbono, frenos M, suspensión M adaptativa, asientos semi-baquets calefactados y el sistema Harman/Kardon Surround, cada detalle maximiza el placer al volante.",
@@ -814,7 +814,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bmw-m4-competition-negro",
     name: "BMW M4 Competition",
-    price: "Consultar",
+    price: "79.890 €",
     badge: { text: "Casi Nuevo", variant: "primary" },
     year: "2023",
     km: 49314,
@@ -848,7 +848,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Competition",
       heroSubtitle: "La nueva generación M",
-      priceLine: "Consultar precio",
+      priceLine: "79.890 €",
       story: [
         "El BMW M4 Competition 2023 en negro zafiro con interior Individual Dakota beige es la última evolución del coupé M. Con apenas 49.000 km, combina lujo artesanal y prestaciones extremas en un único paquete.",
         "Techo de fibra de carbono, asientos M con ajuste eléctrico y memoria, cámara de 360°, Head-Up Display y Harman/Kardon Surround conforman un equipamiento que no deja nada al azar.",
@@ -966,7 +966,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "bmw-x1-sdrive18i",
     name: "BMW X1 sDrive18i",
-    price: "Consultar",
+    price: "21.990 €",
     year: "2021",
     km: 87655,
     tag3: "Automático",
@@ -1002,7 +1002,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "sDrive18i",
       heroSubtitle: "SUV compacto premium",
-      priceLine: "Consultar precio",
+      priceLine: "21.990 €",
       story: [
         "El BMW X1 sDrive18i 2021 en gris mineral es el SUV urbano premium que lo tiene todo. Su motor gasolina de 136 CV con caja automática ofrece agilidad y eficiencia en la ciudad y en carretera.",
         "Techo panorámico, faros LED, navegador profesional, climatizador bizona, keyless entry, sensores de aparcamiento y portón eléctrico conforman un equipamiento completo al servicio del conductor.",
@@ -1099,7 +1099,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "citroen-c5-aircross-plus",
     name: "Citroën C5 Aircross",
-    price: "Consultar",
+    price: "21.000 €",
     badge: { text: "Casi Nuevo", variant: "primary" },
     year: "2025",
     km: 22179,
@@ -1133,7 +1133,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Casi Nuevo",
       heroSubtitle: "AÑO 2025 • 22.179 KM • SUV FAMILIAR",
-      priceLine: "Consultar precio",
+      priceLine: "21.000 €",
       story: [
         "El Citroën C5 Aircross PLUS 2025 es la apuesta más sofisticada de la marca francesa en el segmento SUV. Su motor 1.5 BlueHDi de 130 CV con caja automática EAT8 ofrece una experiencia de conducción suave y eficiente.",
         "Con solo 22.179 km, este ejemplar viene equipado con suspensión hidráulica activa, asientos con función masaje, pantalla táctil de 10\" con GPS integrado y cámara trasera 360°. El confort elevado a la máxima potencia.",
@@ -1167,7 +1167,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "cupra-formentor-2025",
     name: "CUPRA Formentor",
-    price: "Consultar",
+    price: "29.900 €",
     badge: { text: "Casi Nuevo", variant: "primary" },
     year: "2025",
     km: 2000,
@@ -1201,7 +1201,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Casi Nuevo",
       heroSubtitle: "AÑO 2025 • 2.000 KM • SUV COUPÉ DEPORTIVO",
-      priceLine: "Consultar precio",
+      priceLine: "29.900 €",
       story: [
         "El CUPRA Formentor 2025 llega prácticamente sin estrenar, con apenas 2.000 km. Su diseño coupé SUV con líneas agresivas y el emblema CUPRA lo convierten en un objeto de deseo único en su segmento.",
         "Equipado con pantalla táctil de 12,9\", asientos deportivos en cuero con costuras contrastadas, iluminación ambiental y volante CUPRA multifunción. Una experiencia de conducción que va más allá de lo convencional.",
@@ -1235,7 +1235,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "cupra-leon-hev-gris",
     name: "CUPRA León e-Hybrid",
-    price: "Consultar",
+    price: "24.500 €",
     badge: { text: "Híbrido", variant: "dark" },
     year: "2024",
     km: 52399,
@@ -1271,7 +1271,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "e-Hybrid",
       heroSubtitle: "AÑO 2024 • 52.399 KM • COMPACTO DEPORTIVO",
-      priceLine: "Consultar precio",
+      priceLine: "24.500 €",
       story: [
         "El CUPRA León e-Hybrid 2024 representa la evolución del compacto deportivo hacia una nueva era. Su motor híbrido eTSI de 150 CV combina eficiencia y rendimiento con el ADN deportivo que caracteriza a la marca.",
         "Con cambio automático DSG, pantalla táctil de 10\", climatizador bizona trasero con USB y asientos en cuero perforado, ofrece una experiencia premium con conciencia medioambiental. Conducción apasionante y responsable a la vez.",
@@ -1305,7 +1305,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "dacia-dokker-furgon",
     name: "Dacia Dokker Furgón",
-    price: "Consultar",
+    price: "10.990 €",
     badge: { text: "Con IVA", variant: "dark" },
     year: "2020",
     km: 73700,
@@ -1332,7 +1332,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Con IVA",
       heroSubtitle: "AÑO 2020 • 73.700 KM • FURGÓN COMPACTO",
-      priceLine: "Consultar precio",
+      priceLine: "10.990 €",
       story: [
         "El Dacia Dokker Furgón 2020 es la solución más inteligente para profesionales y autónomos que necesitan capacidad de carga sin renunciar a la practicidad. Su carrocería furgón con doble puerta corredera facilita la carga y descarga en cualquier situación.",
         "Equipado con climatizador, radio multimedia con Bluetooth, cámara de marcha atrás y control de crucero, este Dokker demuestra que funcionalidad y equipamiento pueden ir de la mano a un precio competitivo. Precio con IVA incluido.",
@@ -1366,7 +1366,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "dacia-duster-prestige",
     name: "Dacia Duster Prestige",
-    price: "Consultar",
+    price: "15.500 €",
     year: "2019",
     km: 36952,
     tag3: "Manual",
@@ -1396,7 +1396,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Prestige",
       heroSubtitle: "AÑO 2019 • 36.952 KM • SUV COMPACTO",
-      priceLine: "Consultar precio",
+      priceLine: "15.500 €",
       story: [
         "El Dacia Duster Prestige 2019 es el SUV que demuestra que la calidad y el equipamiento no tienen por qué ser caros. Con su acabado Prestige, el nivel más alto de la gama, incluye navegación GPS integrada, cámara trasera y control de crucero de serie.",
         "Con solo 36.952 km, este ejemplar en color marrón se presenta en excelente estado. Ruedas de aleación exclusivas, suspensión para todo terreno y la robustez característica del Duster hacen de este vehículo la elección perfecta para quienes buscan el máximo valor.",
@@ -1569,7 +1569,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "ford-kuga-st-line-phev",
     name: "FORD Kuga ST Line PHEV",
-    price: "Consultar",
+    price: "19.990 €",
     badge: { text: "PHEV", variant: "primary" },
     year: "2021",
     km: 102147,
@@ -1606,7 +1606,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "ST Line PHEV",
       heroSubtitle: "AÑO 2021 • 102.147 KM • SUV HÍBRIDO ENCHUFABLE",
-      priceLine: "Consultar precio",
+      priceLine: "19.990 €",
       story: [
         "El FORD Kuga ST Line PHEV 2021 reúne lo mejor de dos mundos: la dinámica deportiva del acabado ST Line con la eficiencia del sistema híbrido enchufable de 225 CV. Cero emisiones en ciudad y potencia total en carretera.",
         "Con cargador portátil, cámara de marcha atrás, navegación GPS, apertura sin llave y arranque con botón, el Kuga PHEV eleva cada detalle. Selector rotativo de marchas con modos EV, Sport y Comfort para adaptarse a cada situación.",
@@ -1640,7 +1640,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "mercedes-gle-350d-coupe",
     name: "Mercedes GLE 350d Coupé",
-    price: "Consultar",
+    price: "45.000 €",
     badge: { text: "4MATIC", variant: "dark" },
     year: "2019",
     km: 133776,
@@ -1680,7 +1680,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "350d 4MATIC",
       heroSubtitle: "AÑO 2019 • 133.776 KM • SUV COUPÉ PREMIUM",
-      priceLine: "Consultar precio",
+      priceLine: "45.000 €",
       story: [
         "El Mercedes GLE 350d Coupé 4MATIC 2019 combina la elegancia de un coupé con la practicidad de un SUV. Su exclusiva configuración con llantas negras y detalles en naranja lo hacen único. Motor V6 diésel de 258 CV y cambio automático 9G-Tronic.",
         "Con techo panorámico eléctrico, asientos en cuero con calefacción y memoria, sonido Harman/Kardon, suspensión neumática y cámara 360°, este GLE Coupé representa el lujo alemán sin concesiones. Kilometraje certificado con 133.776 km.",
@@ -1714,7 +1714,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "mercedes-gle-53-amg",
     name: "Mercedes GLE 53 AMG 4MATIC+",
-    price: "Consultar",
+    price: "69.990 €",
     badge: { text: "53 AMG", variant: "primary" },
     year: "2021",
     km: 61910,
@@ -1759,7 +1759,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "53 AMG",
       heroSubtitle: "AÑO 2021 • 61.910 KM • SUV PERFORMANCE",
-      priceLine: "Consultar precio",
+      priceLine: "69.990 €",
       story: [
         "El Mercedes GLE 53 AMG 4MATIC+ 2021 es la expresión más pura del rendimiento SUV. Con motor inline-6 de 435 CV, EQ Boost 48V y tracción 4MATIC+, acelera con total refinamiento sin renunciar al confort de un premium alemán.",
         "Interior en cuero negro con costuras naranjas, pantalla MBUX dual screen de última generación, asientos AMG con badge exclusivo y cinturones rojos de competición. Iluminación ambiental premium y cámara 360° completan un equipamiento de ensueño.",
@@ -1793,7 +1793,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "hyundai-i30-negro",
     name: "Hyundai i30 1.5 MHEV",
-    price: "Consultar",
+    price: "24.500 €",
     badge: { text: "Nuevo Ingreso", variant: "primary" },
     year: "2025",
     km: 11862,
@@ -1833,7 +1833,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Nuevo Ingreso",
       heroSubtitle: "AÑO 2025 • 11.862 KM • AUTOMÁTICO",
-      priceLine: "Consultar precio",
+      priceLine: "24.500 €",
       story: [
         "El Hyundai i30 2025 en acabado negro redefine el compacto moderno con su motor 1.5 T-GDi microhíbrido de 160 CV y cambio automático. Con apenas 11.862 km, es prácticamente nuevo y llega equipado con todas las tecnologías de asistencia a la conducción.",
         "Su interior destaca por el panel de instrumentos digital, el climatizador bizona y la conectividad total con Apple CarPlay y Android Auto. El i30 combina eficiencia, confort y tecnología en un paquete urbano que no renuncia a nada.",
@@ -1870,7 +1870,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "vw-id-buzz-pro",
     name: "Volkswagen ID.Buzz Pro",
-    price: "Consultar",
+    price: "38.890 €",
     badge: { text: "Eléctrico", variant: "primary" },
     year: "2024",
     km: 18375,
@@ -1903,7 +1903,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Eléctrico",
       heroSubtitle: "AÑO 2024 • 18.375 KM • ELÉCTRICO",
-      priceLine: "Consultar precio",
+      priceLine: "38.890 €",
       story: [
         "El Volkswagen ID.Buzz Pro 2024 es la reinterpretación eléctrica del legendario Bulli. Con 204 CV y tracción trasera, combina la practicidad de una furgoneta familiar con la tecnología de vanguardia del grupo VW. Sus 18.375 km lo convierten en un vehículo prácticamente nuevo.",
         "El habitáculo ofrece cinco plazas con mesas abatibles en los asientos traseros, pantalla flotante de infoentretenimiento, control crucero adaptativo hasta 210 km/h y App-Connect inalámbrico. El ID.Buzz es el futuro de la movilidad familiar con cero emisiones.",
@@ -1941,7 +1941,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "infiniti-q50-diesel",
     name: "Infiniti Q50 2.2d",
-    price: "Consultar",
+    price: "13.900 €",
     badge: { text: "Oportunidad", variant: "dark" },
     year: "2017",
     km: 183901,
@@ -1978,7 +1978,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Oportunidad",
       heroSubtitle: "AÑO 2017 • 183.901 KM • AUTOMÁTICO",
-      priceLine: "Consultar precio",
+      priceLine: "13.900 €",
       story: [
         "El Infiniti Q50 2.2d es el sedán de lujo japonés que combina el refinamiento de la marca nipona con la eficiencia de su motor diésel de 170 CV y cambio automático. Su diseño con doble escape deportivo y faros Full LED lo distinguen en cualquier entorno.",
         "En su interior destaca la exclusiva doble pantalla táctil de 10 pulgadas, los asientos en cuero calefactables con 3 niveles y el sistema de sonido HiFi envolvente. Con 4 modos de conducción, el Q50 adapta su comportamiento a cada situación.",
@@ -2015,7 +2015,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "kia-ceed-2025",
     name: "KIA Ceed 1.0 T-GDi",
-    price: "Consultar",
+    price: "17.490 €",
     badge: { text: "Nuevo Ingreso", variant: "primary" },
     year: "2025",
     km: 3075,
@@ -2050,7 +2050,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Nuevo Ingreso",
       heroSubtitle: "AÑO 2025 • 3.075 KM • MANUAL",
-      priceLine: "Consultar precio",
+      priceLine: "17.490 €",
       story: [
         "El KIA Ceed 1.0 T-GDi 2025 estrena prácticamente sin kilómetros: tan solo 3.075 km. Su motor turbogasolina de 100 CV combina eficiencia y agilidad urbana, mientras su diseño con la nueva identidad KIA lo convierte en uno de los compactos más atractivos del segmento.",
         "Equipado con Apple CarPlay, Android Auto, cámara de marcha atrás y sensores de aparcamiento, el Ceed 2025 incorpora toda la tecnología necesaria. Su acabado en blanco nieve y su interior moderno con climatizador bizona refuerzan su imagen contemporánea.",
@@ -2085,7 +2085,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "kia-sportage-hev",
     name: "KIA Sportage 1.6 HEV",
-    price: "Consultar",
+    price: "33.900 €",
     badge: { text: "Híbrido", variant: "primary" },
     year: "2023",
     km: 71000,
@@ -2122,7 +2122,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Híbrido",
       heroSubtitle: "AÑO 2023 • 71.000 KM • AUTOMÁTICO",
-      priceLine: "Consultar precio",
+      priceLine: "33.900 €",
       story: [
         "El KIA Sportage 1.6 T-GDi HEV 2023 en negro reúne lo mejor del segmento SUV: la potencia de su sistema híbrido de 230 CV, la elegancia de las dobles pantallas panorámicas curvas y la versatilidad de un SUV familiar. Un vehículo que combina tecnología e imagen a un nivel superior.",
         "Con sistema de navegación GPS, control de crucero adaptativo, cámara trasera, AutoHold y selector de modos de conducción, el Sportage HEV tiene todo lo que necesitas. Su badge HEV certifica un consumo significativamente reducido frente a un motor de combustión convencional.",
@@ -2161,7 +2161,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "kia-sportage-blanco-2026",
     name: "KIA Sportage HEV 2026",
-    price: "Consultar",
+    price: "26.000 €",
     badge: { text: "Seminuevo", variant: "primary" },
     year: "2026",
     km: 4000,
@@ -2195,7 +2195,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "HEV 2026",
       heroSubtitle: "AÑO 2026 • 4.000 KM • GASOLINA/HÍBRIDO",
-      priceLine: "Consultar precio",
+      priceLine: "26.000 €",
       story: [
         "El KIA Sportage HEV 2026 en blanco representa la última generación del icónico SUV coreano. Con su mecánica híbrida 1.6 T-GDi de 239 CV y cambio automático, ofrece la combinación perfecta de rendimiento e eficiencia en un diseño audaz y futurista.",
         "Su interior digital con doble pantalla panorámica, climatizador bizona, acceso y arranque sin llave, y cámara 360° lo convierte en una opción de lujo asequible. Prácticamente nuevo con solo 4.000 km.",
@@ -2228,7 +2228,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "kia-xceed-gris-2026",
     name: "KIA Xceed MHEV 2026",
-    price: "Consultar",
+    price: "23.990 €",
     badge: { text: "Seminuevo", variant: "primary" },
     year: "2026",
     km: 3000,
@@ -2260,7 +2260,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "MHEV 2026",
       heroSubtitle: "AÑO 2026 • 3.000 KM • GASOLINA/MHEV",
-      priceLine: "Consultar precio",
+      priceLine: "23.990 €",
       story: [
         "El KIA Xceed 2026 MHEV es el crossover coupé de la familia KIA, con su elegante diseño en gris que combina las líneas aerodinámicas de un coupé con la versatilidad de un SUV. Su motor 1.0 T-GDi de 115 CV con tecnología microhíbrida garantiza eficiencia en cada trayecto.",
         "Prácticamente nuevo con solo 3.000 km, incluye multimedia táctil, cámara trasera, climatizador bizona y todos los sistemas de seguridad activa que definen a la gama KIA de última generación.",
@@ -2293,7 +2293,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "lynk-co-01-phev-2023",
     name: "Lynk & Co 01 PHEV 2023",
-    price: "Consultar",
+    price: "22.890 €",
     badge: { text: "PHEV", variant: "primary" },
     year: "2023",
     km: 48759,
@@ -2333,7 +2333,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Lynk & Co 01 PHEV",
       heroSubtitle: "AÑO 2023 • 48.759 KM • PHEV",
-      priceLine: "Consultar precio",
+      priceLine: "22.890 €",
       story: [
         "El Lynk & Co 01 PHEV 2023 es un SUV conectado y premium de origen sueco-chino con 261 CV de potencia combinada. Su llamativa carrocería azul, llantas bicolor con pinzas en azul y techo panorámico eléctrico lo distinguen al instante de cualquier otro SUV.",
         "Interior de máximo nivel con tapicería alcántara, costuras azules de contraste, asientos eléctricos y techo panorámico corredizo. Cámara 360°, control crucero adaptativo, faros adaptativos y asistente de aparcamiento automático completan el equipamiento.",
@@ -2436,7 +2436,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "mercedes-amg-a35-rojo",
     name: "Mercedes AMG A35 4MATIC",
-    price: "Consultar",
+    price: "37.990 €",
     badge: { text: "AMG", variant: "primary" },
     year: "2019",
     km: 111474,
@@ -2479,7 +2479,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "AMG A35 4MATIC",
       heroSubtitle: "AÑO 2019 • 111.474 KM • GASOLINA",
-      priceLine: "Consultar precio",
+      priceLine: "37.990 €",
       story: [
         "El Mercedes-AMG A35 4MATIC 2019 en rojo brillante es un hot hatch de 306 CV que no pasa desapercibido. Con su motor 2.0 turbo de gasolina, tracción integral 4MATIC y modos de conducción AMG Sport+, ofrece prestaciones deportivas extraordinarias en un compacto de uso diario.",
         "Interior AMG de alto nivel: asientos deportivos calefactables, costuras y cinturones rojos, volante AMG, techo panorámico, equipo Burmester y pantalla MBUX. Apertura sin llave, cámara 360°, control crucero adaptativo, sensor anti colisión y modos AMG completan este equipamiento excepcional.",
@@ -2580,7 +2580,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "mercedes-cla-35-amg",
     name: "Mercedes CLA 35 AMG",
-    price: "Consultar",
+    price: "34.490 €",
     badge: { text: "AMG", variant: "primary" },
     year: "2020",
     km: 55000,
@@ -2624,7 +2624,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "AMG 35",
       heroSubtitle: "AÑO 2020 • 55.000 KM • GASOLINA",
-      priceLine: "Consultar precio",
+      priceLine: "34.490 €",
       story: [
         "El Mercedes-AMG CLA 35 4MATIC 2020 es el balance perfecto entre diseño coupé seductor y prestaciones AMG genuinas. Con su motor 2.0 turbo de 306 CV, tracción integral 4MATIC y caja automática AMG SPEEDSHIFT DCT de 7 marchas, alcanza los 100 km/h en solo 4,9 segundos.",
         "Interior AMG con asientos sport calefactables, sistema MBUX con pantalla dual de 10,25 pulgadas, iluminación ambiental de 64 colores, Apple CarPlay y modos de conducción AMG. Un coupé de cuatro puertas que combina elegancia y rendimiento sin concesiones.",
@@ -2658,7 +2658,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "mercedes-cla-amg-45",
     name: "Mercedes CLA AMG 45 S",
-    price: "Consultar",
+    price: "49.900 €",
     badge: { text: "AMG 45 S", variant: "primary" },
     year: "2021",
     km: 42000,
@@ -2703,7 +2703,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "AMG 45 S",
       heroSubtitle: "AÑO 2021 • 42.000 KM • GASOLINA",
-      priceLine: "Consultar precio",
+      priceLine: "49.900 €",
       story: [
         "El Mercedes-AMG CLA 45 S 4MATIC+ 2021 es el rey absoluto de los compactos de altas prestaciones. Con el motor de cuatro cilindros más potente del mundo, 421 CV y 500 Nm, tracción integral 4MATIC+ de última generación y caja AMG SPEEDSHIFT DCT de 8 marchas, alcanza los 100 km/h en tan solo 3,9 segundos.",
         "Acabado AMG S con diferencial trasero de deslizamiento limitado, frenos AMG Performance de cuatro pistones, escape activo titanio AMG, asientos Recaro con costuras rojas, techo panorámico y el sistema MBUX más completo. Un supercoche compacto con matrícula de calle.",
@@ -2876,7 +2876,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "peugeot-2008-gt-blanco-2021",
     name: "Peugeot 2008 GT",
-    price: "Consultar",
+    price: "17.990 €",
     badge: { text: "GT", variant: "primary" },
     year: "2021",
     km: 118434,
@@ -2909,7 +2909,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "GT",
       heroSubtitle: "AÑO 2021 • 118.434 KM • DIÉSEL",
-      priceLine: "Consultar precio",
+      priceLine: "17.990 €",
       story: [
         "El Peugeot 2008 GT 2021 es el SUV urbano más sofisticado del segmento: i-Cockpit digital, cambio automático EAT8, cámara 360° y botón de arranque sin llave. Su motor 1.5 BlueHDi de 130 CV combina un par motor diésel excepcional con un consumo muy contenido.",
         "Equipado con climatizador bi-zona, sensor de lluvia, control de crucero adaptativo, aviso de cambio de carril y llantas de aleación, el acabado GT eleva al 2008 a una categoría premium que pocas berlinas pueden igualar.",
@@ -3005,7 +3005,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "peugeot-3008-azul-2020",
     name: "Peugeot 3008 BlueHDi",
-    price: "Consultar",
+    price: "14.490 €",
     year: "2020",
     km: 140008,
     tag3: "Automático",
@@ -3039,7 +3039,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "SUV",
       heroSubtitle: "AÑO 2020 • 140.008 KM • DIÉSEL",
-      priceLine: "Consultar precio",
+      priceLine: "14.490 €",
       story: [
         "El Peugeot 3008 2020 es el SUV compacto premium que redefinió el segmento con su i-Cockpit y su diseño interior excepcional. El motor 1.5 BlueHDi con cambio automático EAT8 ofrece suavidad, eficiencia y un tacto refinado en cada kilómetro.",
         "Equipado con navegación 3D conectada, cámara trasera 180°, sensores de aparcamiento, climatizador bi-zona y acceso manos libres, combina tecnología y confort para los trayectos más exigentes.",
@@ -3073,7 +3073,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "peugeot-3008-gris-2022",
     name: "Peugeot 3008 Style",
-    price: "Consultar",
+    price: "16.490 €",
     badge: { text: "Style", variant: "primary" },
     year: "2022",
     km: 84800,
@@ -3105,7 +3105,7 @@ export const vehicles: Vehicle[] = [
       ],
       heroBadge: "Style",
       heroSubtitle: "AÑO 2022 • 84.800 KM • GASOLINA",
-      priceLine: "Consultar precio",
+      priceLine: "16.490 €",
       story: [
         "El Peugeot 3008 Style 2022 trae lo mejor de la nueva generación: i-Cockpit con cuadro digital, pantalla táctil de 10 pulgadas y un diseño interior sofisticado en un SUV que destaca en la carretera con su elegante acabado en gris.",
         "Con solo 84.800 km y motor 1.2 PureTech de 130 CV, ofrece un equilibrio perfecto entre eficiencia y prestaciones. Cuenta con navegación 3D conectada, cámara trasera 180°, climatizador bi-zona y acceso manos libres.",
@@ -3269,7 +3269,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "peugeot-5008-gt",
     name: "Peugeot 5008 GT",
-    price: "Consultar",
+    price: "29.490 €",
     badge: { text: "GT", variant: "dark" },
     year: "2023",
     km: 20074,
@@ -3281,7 +3281,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "GT 2023",
       heroSubtitle: "AÑO 2023 • 20.074 KM • 7 PLAZAS",
-      priceLine: "Consultar precio",
+      priceLine: "29.490 €",
       images: [
         "/cars/PEUGEOT%205008%20GT/car_front.jpeg",
         "/cars/PEUGEOT%205008%20GT/car_front_left.jpeg",
@@ -3345,7 +3345,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "porsche-cayenne-coupe-ehybrid",
     name: "Porsche Cayenne Coupé E-Hybrid",
-    price: "Consultar",
+    price: "50.000 €",
     badge: { text: "E-Hybrid", variant: "dark" },
     year: "2020",
     km: 191391,
@@ -3357,7 +3357,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "E-Hybrid 462 CV",
       heroSubtitle: "AÑO 2020 • 191.391 KM • COUPÉ HÍBRIDO",
-      priceLine: "Consultar precio",
+      priceLine: "50.000 €",
       images: [
         "/cars/PORSCHE%20%20Cayenne%20Coupe%20EHybrid/car_front.jpeg",
         "/cars/PORSCHE%20%20Cayenne%20Coupe%20EHybrid/car_front_left.jpeg",
@@ -3423,7 +3423,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "porsche-cayenne-coupe-gris",
     name: "Porsche Cayenne Coupé",
-    price: "Consultar",
+    price: "50.000 €",
     badge: { text: "Coupé", variant: "dark" },
     year: "2020",
     km: 112725,
@@ -3435,7 +3435,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Coupé 340 CV",
       heroSubtitle: "AÑO 2020 • 112.725 KM • COUPÉ PREMIUM",
-      priceLine: "Consultar precio",
+      priceLine: "50.000 €",
       images: [
         "/cars/Porsche%20Cayenne_GRIS/car_front.jpeg",
         "/cars/Porsche%20Cayenne_GRIS/car_front_left.jpeg",
@@ -3495,7 +3495,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "porsche-cayenne-llantas-doradas",
     name: "Porsche Cayenne Llantas Doradas",
-    price: "Consultar",
+    price: "50.000 €",
     badge: { text: "Sport", variant: "dark" },
     year: "2020",
     km: 180000,
@@ -3507,7 +3507,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "340 CV · Llantas Doradas",
       heroSubtitle: "AÑO 2020 • 180.000 KM • EDICIÓN ESPECIAL",
-      priceLine: "Consultar precio",
+      priceLine: "50.000 €",
       images: [
         "/cars/PORSCHE%20CAYENNE%20llantas%20amarillas/car_front.jpeg",
         "/cars/PORSCHE%20CAYENNE%20llantas%20amarillas/car_front_left.jpeg",
@@ -3564,7 +3564,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "porsche-macan",
     name: "Porsche Macan",
-    price: "Consultar",
+    price: "58.000 €",
     badge: { text: "Nuevo Ingreso", variant: "primary" },
     year: "2019",
     km: 15267,
@@ -3576,7 +3576,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "245 CV · 15.267 KM",
       heroSubtitle: "AÑO 2019 • 15.267 KM • SUV DEPORTIVO",
-      priceLine: "Consultar precio",
+      priceLine: "58.000 €",
       images: [
         "/cars/Porsche%20macan/car_front.jpeg",
         "/cars/Porsche%20macan/car_front_left.jpeg",
@@ -3708,7 +3708,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "seat-arona-azul-fr",
     name: "SEAT Arona FR 1.5 TSI",
-    price: "Consultar",
+    price: "16.990 €",
     badge: { text: "FR", variant: "primary" },
     year: "2021",
     km: 77621,
@@ -3720,7 +3720,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "FR",
       heroSubtitle: "Arona FR 1.5 TSI EVO 150CV con DSG7, cuadro digital y equipamiento completo",
-      priceLine: "Consultar precio",
+      priceLine: "16.990 €",
       images: [
         "/cars/SEAT%20ARONA%20AZUL/car_front_left.jpeg",
         "/cars/SEAT%20ARONA%20AZUL/car_front.jpeg",
@@ -3774,7 +3774,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "seat-arona-fr-rojo",
     name: "SEAT Arona FR 1.0 TSI",
-    price: "Consultar",
+    price: "13.990 €",
     badge: { text: "FR", variant: "primary" },
     year: "2020",
     km: 111704,
@@ -3786,7 +3786,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "FR",
       heroSubtitle: "Arona FR 1.0 TSI 115CV con Virtual Cockpit, detector ángulo muerto y carga inalámbrica",
-      priceLine: "Consultar precio",
+      priceLine: "13.990 €",
       images: [
         "/cars/SEAT%20Arona%20fr%20rojo/car_front_left.jpeg",
         "/cars/SEAT%20Arona%20fr%20rojo/car_front.jpeg",
@@ -3841,7 +3841,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "seat-ateca-blanco",
     name: "SEAT Ateca 1.0 TSI",
-    price: "Consultar",
+    price: "15.490 €",
     year: "2020",
     km: 98038,
     tag3: "Manual",
@@ -3852,7 +3852,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Ocasión",
       heroSubtitle: "Ateca 1.0 TSI 115CV con ACC, CarPlay, climatizador bizona y retrovisores eléctricos",
-      priceLine: "Consultar precio",
+      priceLine: "15.490 €",
       images: [
         "/cars/SEAT%20ATECA/car_front.jpeg",
         "/cars/SEAT%20ATECA/car_front_left.jpeg",
@@ -3903,7 +3903,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "seat-ateca-azul",
     name: "SEAT Ateca 1.0 TSI Facelift",
-    price: "Consultar",
+    price: "18.500 €",
     badge: { text: "Nuevo Ingreso", variant: "dark" },
     year: "2022",
     km: 70000,
@@ -3915,7 +3915,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Nuevo Ingreso",
       heroSubtitle: "Ateca facelift 2022 con pantalla 10,25\", navegación y solo 70.000 km",
-      priceLine: "Consultar precio",
+      priceLine: "18.500 €",
       images: [
         "/cars/seat%20ateca%20azul/car_front.jpeg",
         "/cars/seat%20ateca%20azul/car_front_left.jpeg",
@@ -3968,7 +3968,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "seat-ibiza-gris",
     name: "SEAT Ibiza 1.0 MPI Reference",
-    price: "Consultar",
+    price: "10.900 €",
     badge: { text: "Oportunidad", variant: "dark" },
     year: "2019",
     km: 65200,
@@ -3980,7 +3980,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Oportunidad",
       heroSubtitle: "Ibiza 2019 con FullLink CarPlay/Android Auto y 65.200 km",
-      priceLine: "Consultar precio",
+      priceLine: "10.900 €",
       images: [
         "/cars/SEAT%20IBIZA%20GRIS/car_front.jpeg",
         "/cars/SEAT%20IBIZA%20GRIS/car_front_left.jpeg",
@@ -4027,7 +4027,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "tesla-model-3",
     name: "Tesla Model 3 Long Range RWD",
-    price: "Consultar",
+    price: "26.000 €",
     badge: { text: "Eléctrico", variant: "primary" },
     year: "2019",
     km: 43610,
@@ -4039,7 +4039,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Eléctrico",
       heroSubtitle: "Model 3 Long Range 2019 · 560 km WLTP · 43.610 km · Blanco perlado",
-      priceLine: "Consultar precio",
+      priceLine: "26.000 €",
       images: [
         "/cars/TESLA%20MODEL%203/car_front.jpeg",
         "/cars/TESLA%20MODEL%203/car_front_left.jpeg",
@@ -4090,7 +4090,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "volkswagen-tiguan",
     name: "Volkswagen Tiguan 1.5 TSI Life",
-    price: "Consultar",
+    price: "19.990 €",
     badge: { text: "Oportunidad", variant: "dark" },
     year: "2020",
     km: 75000,
@@ -4102,7 +4102,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Oportunidad",
       heroSubtitle: "Tiguan 2020 con navegador, ParkPilot, faros LED y solo 75.000 km",
-      priceLine: "Consultar precio",
+      priceLine: "19.990 €",
       images: [
         "/cars/tiguan%20blanco/car_front.jpeg",
         "/cars/tiguan%20blanco/car_front_left.jpeg",
@@ -4153,7 +4153,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "toyota-chr-gris",
     name: "Toyota C-HR 1.8 Hybrid Aire",
-    price: "Consultar",
+    price: "21.999 €",
     badge: { text: "Híbrido", variant: "dark" },
     year: "2023",
     km: 109000,
@@ -4165,7 +4165,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Híbrido",
       heroSubtitle: "C-HR 1.8 HEV 2023 · e-CVT · BSM · Cámara trasera · 109.000 km",
-      priceLine: "Consultar precio",
+      priceLine: "21.999 €",
       images: [
         "/cars/Toyota%20CHR/car_front.jpeg",
         "/cars/Toyota%20CHR/car_front_left.jpeg",
@@ -4217,7 +4217,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "toyota-chr-phev",
     name: "Toyota C-HR 2.0 PHEV Advance",
-    price: "Consultar",
+    price: "32.390 €",
     badge: { text: "Plug-in Hybrid", variant: "primary" },
     year: "2024",
     km: 7503,
@@ -4229,7 +4229,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Plug-in Hybrid",
       heroSubtitle: "C-HR 2.0 PHEV 2024 · 223 CV · 7.503 km · Pantalla 12,3\" · Casi nuevo",
-      priceLine: "Consultar precio",
+      priceLine: "32.390 €",
       images: [
         "/cars/Toyota%20CHR%20BLANCO/car_front.jpeg",
         "/cars/Toyota%20CHR%20BLANCO/car_front_left.jpeg",
@@ -4283,7 +4283,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "vw-golf-gti-clubsport-45",
     name: "VW Golf GTI Clubsport 45",
-    price: "Consultar",
+    price: "35.000 €",
     badge: { text: "Edición Especial", variant: "primary" },
     year: "2022",
     km: 61500,
@@ -4295,7 +4295,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Edición Especial",
       heroSubtitle: "GTI Clubsport 45 Aniversario · 301 CV · DSG7 · Akrapovič · 19\" negros · 61.500 km",
-      priceLine: "Consultar precio",
+      priceLine: "35.000 €",
       images: [
         "/cars/Volkswagen%20GTI%20club%2045/car_front.jpeg",
         "/cars/Volkswagen%20GTI%20club%2045/car_front_left.jpeg",
@@ -4356,7 +4356,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "volvo-xc40-t3",
     name: "Volvo XC40 T3 Momentum",
-    price: "Consultar",
+    price: "21.000 €",
     badge: { text: "Oportunidad", variant: "dark" },
     year: "2020",
     km: 82693,
@@ -4368,7 +4368,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Oportunidad",
       heroSubtitle: "XC40 T3 2020 · 163 CV · Manual · Pantalla 9\" · Cámara 360° · 82.693 km",
-      priceLine: "Consultar precio",
+      priceLine: "21.000 €",
       images: [
         "/cars/Volvo%20xc40/car_front.jpeg",
         "/cars/Volvo%20xc40/car_front_left.jpeg",
@@ -4422,7 +4422,7 @@ export const vehicles: Vehicle[] = [
   {
     id: "vw-taigo",
     name: "Volkswagen Taigo 1.0 TSI Life",
-    price: "Consultar",
+    price: "20.900 €",
     badge: { text: "Nuevo Ingreso", variant: "dark" },
     year: "2025",
     km: 49000,
@@ -4434,7 +4434,7 @@ export const vehicles: Vehicle[] = [
     detail: {
       heroBadge: "Nuevo Ingreso",
       heroSubtitle: "Taigo 2025 facelift · 115 CV · Automático · Climatizador bizona · 49.000 km",
-      priceLine: "Consultar precio",
+      priceLine: "20.900 €",
       images: [
         "/cars/Vw%20taigo/car_front.jpeg",
         "/cars/Vw%20taigo/car_front_left.jpeg",
