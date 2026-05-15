@@ -17,7 +17,7 @@ export function SiteNav({ activePage }: Props) {
     <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 sm:px-8 py-4">
         <Link href="/">
-          <Image src="/oto_motor_logo.jpg" alt="OTO MOTOR" width={48} height={48} />
+          <Image src="/horizontal_logo.svg" alt="OTO MOTOR" width={210} height={100} />
         </Link>
 
         <div className="hidden items-center space-x-8 md:flex">
