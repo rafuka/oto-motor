@@ -4506,3 +4506,17 @@ export const KM_RANGES = [
   { value: "80000-120000", label: "80.000 – 120.000 km" },
   { value: "120000+", label: "Más de 120.000 km" },
 ] as const;
+
+export const PRICE_RANGES = [
+  { value: "0-15000", label: "Hasta 15.000 €" },
+  { value: "15000-25000", label: "15.000 – 25.000 €" },
+  { value: "25000-40000", label: "25.000 – 40.000 €" },
+  { value: "40000-70000", label: "40.000 – 70.000 €" },
+  { value: "70000+", label: "Más de 70.000 €" },
+] as const;
+
+export function parsePrice(price: string): number | null {
+  const digits = price.replace(/[^\d]/g, "");
+  if (!digits) return null;
+  return parseInt(digits, 10);
+}

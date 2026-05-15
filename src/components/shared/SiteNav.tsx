@@ -52,12 +52,12 @@ export function SiteNav({ activePage }: Props) {
         </div>
 
         <div className="flex items-center">
-          <button
-            type="button"
+          <a
+            href="#contacto"
             className="kinetic-gradient rounded-lg px-6 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
           >
-            Agendar Cita
-          </button>
+            Contáctanos
+          </a>
         </div>
       </div>
     </nav>

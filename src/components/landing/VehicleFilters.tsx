@@ -1,7 +1,7 @@
 "use client";
 
 import { parseAsInteger, parseAsString, useQueryStates } from "nuqs";
-import { KM_RANGES } from "@/lib/vehicles";
+import { KM_RANGES, PRICE_RANGES } from "@/lib/vehicles";
 
 type Props = {
   brands: string[];
@@ -22,6 +22,7 @@ export function VehicleFilters({ brands, fuels, years }: Props) {
       yearFrom: parseAsString.withDefault(""),
       yearTo: parseAsString.withDefault(""),
       fuel: parseAsString.withDefault(""),
+      precio: parseAsString.withDefault(""),
       page: parseAsInteger.withDefault(1),
     },
     { shallow: false, history: "replace" },
@@ -36,7 +37,8 @@ export function VehicleFilters({ brands, fuels, years }: Props) {
     filters.km ||
     filters.yearFrom ||
     filters.yearTo ||
-    filters.fuel
+    filters.fuel ||
+    filters.precio
   );
 
   return (
@@ -55,6 +57,7 @@ export function VehicleFilters({ brands, fuels, years }: Props) {
                 yearFrom: null,
                 yearTo: null,
                 fuel: null,
+                precio: null,
                 page: 1,
               })
             }
@@ -78,6 +81,23 @@ export function VehicleFilters({ brands, fuels, years }: Props) {
             {brands.map((b) => (
               <option key={b} value={b}>
                 {b}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Precio */}
+        <div>
+          <label className={labelClass}>Precio</label>
+          <select
+            className={selectClass}
+            value={filters.precio}
+            onChange={(e) => set("precio", e.target.value)}
+          >
+            <option value="">Cualquier precio</option>
+            {PRICE_RANGES.map((r) => (
+              <option key={r.value} value={r.value}>
+                {r.label}
               </option>
             ))}
           </select>

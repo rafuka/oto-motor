@@ -1,17 +1,24 @@
 import { HeroBannerGallery } from "@/components/landing/HeroBannerGallery";
 import { GridVehicle } from "@/components/landing/GridVehicle";
 import { VehiclePagination } from "@/components/landing/VehiclePagination";
-import { vehicles, getBrand } from "@/lib/vehicles";
+import { vehicles, getBrand, parsePrice } from "@/lib/vehicles";
 import { VehicleFilters } from "@/components/landing/VehicleFilters";
 import { SiteNav } from "@/components/shared/SiteNav";
 
 const PAGE_SIZE = 12;
 
-type FilterState = { marca: string; km: string; yearFrom: string; yearTo: string; fuel: string };
+type FilterState = {
+  marca: string;
+  km: string;
+  yearFrom: string;
+  yearTo: string;
+  fuel: string;
+  precio: string;
+};
 type Props = { page: number; filters: FilterState };
 
-function parseKmRange(range: string): [number, number] {
-  if (range === "120000+") return [120001, Infinity];
+function parseRange(range: string): [number, number] {
+  if (range.endsWith("+")) return [parseInt(range) + 1, Infinity];
   const [lo, hi] = range.split("-").map(Number);
   return [lo, hi];
 }
@@ -24,12 +31,18 @@ export function HomeView({ page, filters }: Props) {
   const filtered = vehicles.filter((v) => {
     if (filters.marca && getBrand(v.name) !== filters.marca) return false;
     if (filters.km) {
-      const [lo, hi] = parseKmRange(filters.km);
+      const [lo, hi] = parseRange(filters.km);
       if (v.km < lo || v.km > hi) return false;
     }
     if (filters.yearFrom && parseInt(v.year) < parseInt(filters.yearFrom)) return false;
     if (filters.yearTo && parseInt(v.year) > parseInt(filters.yearTo)) return false;
     if (filters.fuel && v.fuel !== filters.fuel) return false;
+    if (filters.precio) {
+      const price = parsePrice(v.price);
+      if (price === null) return false;
+      const [lo, hi] = parseRange(filters.precio);
+      if (price < lo || price > hi) return false;
+    }
     return true;
   });
 
@@ -46,13 +59,12 @@ export function HomeView({ page, filters }: Props) {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="z-10">
               <h1 className="text-on-surface text-5xl sm:text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
-                Coches usados en buen estado y al{" "}
+                Coches de ocasión garantizados y al{" "}
                 <i className="not-italic text-primary">mejor precio</i>
               </h1>
               <p className="mt-6 max-w-xl text-xl text-secondary">
                 Encuentra el coche de tus sueños con la mejor garantía y
-                confianza del mercado. Curaduría exclusiva de vehículos de alto
-                rendimiento.
+                confianza del mercado.
               </p>
             </div>
             <HeroBannerGallery items={vehicles} />
@@ -139,7 +151,7 @@ export function HomeView({ page, filters }: Props) {
         </section>
       </main>
 
-      <footer className="mt-auto w-full bg-zinc-100">
+      <footer id="contacto" className="mt-auto w-full bg-zinc-100">
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-8 px-12 py-16 md:grid-cols-3">
           <div className="space-y-4">
             <div className="text-xl font-bold text-zinc-900">OTO MOTOR</div>
@@ -158,6 +170,13 @@ export function HomeView({ page, filters }: Props) {
                 mail
               </span>
             </div>
+            <a
+              href="tel:+34600749009"
+              className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600"
+            >
+              <span className="material-symbols-outlined text-base text-primary">call</span>
+              +34 600 749 009
+            </a>
           </div>
           <div className="grid grid-cols-2 gap-8">
             <div>

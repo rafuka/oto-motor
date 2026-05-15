@@ -7,4 +7,5 @@ export const searchParamsCache = createSearchParamsCache({
   yearFrom: parseAsString.withDefault(""),
   yearTo: parseAsString.withDefault(""),
   fuel: parseAsString.withDefault(""),
+  precio: parseAsString.withDefault(""),
 });

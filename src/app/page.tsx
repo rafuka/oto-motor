@@ -4,7 +4,7 @@ import { searchParamsCache } from "@/lib/search-params";
 
 export const metadata: Metadata = {
   title: "Inventario | Oto Motor",
-  description: "Los mejores coches usados en buen estado.",
+  description: "Los mejores coches usados de ocasión en buen estado.",
 };
 
 export default async function Home({
@@ -12,13 +12,13 @@ export default async function Home({
 }: {
   searchParams: Promise<Record<string, string | string[]>>;
 }) {
-  const { page, marca, km, yearFrom, yearTo, fuel } =
+  const { page, marca, km, yearFrom, yearTo, fuel, precio } =
     await searchParamsCache.parse(searchParams);
 
   return (
     <HomeView
       page={page}
-      filters={{ marca, km, yearFrom, yearTo, fuel }}
+      filters={{ marca, km, yearFrom, yearTo, fuel, precio }}
     />
   );
 }

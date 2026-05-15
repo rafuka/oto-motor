@@ -171,7 +171,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
         </section>
       </main>
 
-      <footer className="mt-auto w-full bg-zinc-100 dark:bg-zinc-900">
+      <footer id="contacto" className="mt-auto w-full bg-zinc-100 dark:bg-zinc-900">
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-8 px-12 py-16 md:grid-cols-3">
           <div className="space-y-4">
             <div className="text-xl font-bold text-zinc-900 dark:text-white">
@@ -213,12 +213,15 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               </span>
               C. de las Islas Cíes, 4, 28970 Humanes de Madrid, Madrid
             </div>
-            <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <a
+              href="tel:+34600749009"
+              className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
+            >
               <span className="material-symbols-outlined detail-icons scale-75 text-primary">
                 call
               </span>
-              +34 916 123 456
-            </div>
+              +34 600 749 009
+            </a>
           </div>
         </div>
         <div className="border-t border-zinc-200 px-12 py-6 dark:border-zinc-800">
