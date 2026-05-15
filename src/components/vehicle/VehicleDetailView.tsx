@@ -4,18 +4,21 @@ import { SiteNav } from "@/components/shared/SiteNav";
 import { formatKm, type Vehicle } from "@/lib/vehicles";
 
 const WHATSAPP_NUMBER = "34600749009";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
 type Props = { vehicle: Vehicle };
 
 export function VehicleDetailView({ vehicle: v }: Props) {
   const d = v.detail;
 
+  const vehicleUrl = `${SITE_URL}/vehiculo/${v.id}`;
   const whatsappMessage =
     `Hola, me interesa este vehículo:\n\n` +
     `• ${v.name}\n` +
     `• Año: ${v.year}\n` +
     `• Kilometraje: ${formatKm(v.km)}\n` +
     `• Precio: ${v.price}\n` +
+    `• Enlace: ${vehicleUrl}\n\n` +
     `¿Podrían darme más información?`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
