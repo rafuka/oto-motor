@@ -1,13 +1,25 @@
 import Image from "next/image";
 import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
 import { SiteNav } from "@/components/shared/SiteNav";
-import type { Vehicle } from "@/lib/vehicles";
+import { formatKm, type Vehicle } from "@/lib/vehicles";
 
+const WHATSAPP_NUMBER = "34600749009";
 
 type Props = { vehicle: Vehicle };
 
 export function VehicleDetailView({ vehicle: v }: Props) {
   const d = v.detail;
+
+  const whatsappMessage =
+    `Hola, me interesa este vehículo:\n\n` +
+    `• ${v.name}\n` +
+    `• Año: ${v.year}\n` +
+    `• Kilometraje: ${formatKm(v.km)}\n` +
+    `• Combustible: ${v.fuel}\n` +
+    `• Precio: ${v.price}\n` +
+    `• Ref: ${v.id}\n\n` +
+    `¿Podrían darme más información?`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <>
@@ -18,9 +30,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
           {/* Title + CTA row */}
           <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-start">
             <div className="md:flex-1">
-              <span className="mb-2 inline-block rounded-md bg-primary-container px-3 py-1 font-label text-xs font-bold uppercase tracking-widest text-primary">
-                {d.heroBadge}
-              </span>
+       
               <h1 className="text-on-surface mt-2 text-4xl font-black italic tracking-tighter sm:text-5xl">
                 {v.name.toUpperCase()}
               </h1>
@@ -38,21 +48,16 @@ export function VehicleDetailView({ vehicle: v }: Props) {
                 Nuestros asesores expertos están listos para brindarte una
                 experiencia personalizada.
               </p>
-              <div className="pt-2 lg:flex lg:items-center lg:gap-2">
-                <button
-                  type="button"
+              <div className="pt-2">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="signature-gradient flex w-full items-center justify-center gap-2 rounded-xl py-4 text-base font-bold text-white transition-all hover:opacity-90 active:scale-95"
                 >
-                  <span className="material-symbols-outlined detail-icons">mail</span>
+                  <span className="material-symbols-outlined detail-icons">chat</span>
                   Solicitar Información
-                </button>
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-surface-container-highest py-4 text-base font-bold text-on-surface transition-all hover:bg-surface-container-high active:scale-95 mt-0"
-                >
-                  <span className="material-symbols-outlined detail-icons">calendar_today</span>
-                  Agendar Prueba de Manejo
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -178,7 +183,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               OTO MOTOR
             </div>
             <p className="font-['Inter'] text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-              Tu destino premium para vehículos de alto rendimiento en España.
+              Tu destino premium para vehículos de ocasión garantizados.
               Experiencia y confianza en cada kilómetro.
             </p>
           </div>
