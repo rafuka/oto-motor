@@ -15,9 +15,7 @@ export function VehicleDetailView({ vehicle: v }: Props) {
     `• ${v.name}\n` +
     `• Año: ${v.year}\n` +
     `• Kilometraje: ${formatKm(v.km)}\n` +
-    `• Combustible: ${v.fuel}\n` +
     `• Precio: ${v.price}\n` +
-    `• Ref: ${v.id}\n\n` +
     `¿Podrían darme más información?`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
