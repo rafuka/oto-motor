@@ -3,7 +3,7 @@ import { HomeView } from "@/components/landing/HomeView";
 import { searchParamsCache } from "@/lib/search-params";
 
 export const metadata: Metadata = {
-  title: "Inventario | Oto Motor",
+  title: "Consesionario Oto Motor",
   description: "Los mejores coches usados de ocasión en buen estado.",
 };
 
