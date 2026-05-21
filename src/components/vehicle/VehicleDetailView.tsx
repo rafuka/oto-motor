@@ -188,29 +188,6 @@ export function VehicleDetailView({ vehicle: v }: Props) {
               Experiencia y confianza en cada kilómetro.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <h4 className="mb-2 font-bold text-zinc-900 dark:text-white">
-              Explorar
-            </h4>
-            <a
-              className="font-['Inter'] text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-              href="#"
-            >
-              Privacidad
-            </a>
-            <a
-              className="font-['Inter'] text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-              href="#"
-            >
-              Términos
-            </a>
-            <a
-              className="font-['Inter'] text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-              href="#"
-            >
-              Mapa del Sitio
-            </a>
-          </div>
           <div className="space-y-4">
             <h4 className="font-bold text-zinc-900 dark:text-white">Contacto</h4>
             <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">

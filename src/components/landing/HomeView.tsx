@@ -1,7 +1,7 @@
 import { HeroBannerGallery } from "@/components/landing/HeroBannerGallery";
 import { GridVehicle } from "@/components/landing/GridVehicle";
 import { VehiclePagination } from "@/components/landing/VehiclePagination";
-import { vehicles, getBrand, parsePrice } from "@/lib/vehicles";
+import { getVehicles, getBrand, parsePrice } from "@/lib/vehicles";
 import { VehicleFilters } from "@/components/landing/VehicleFilters";
 import { SiteNav } from "@/components/shared/SiteNav";
 
@@ -23,7 +23,8 @@ function parseRange(range: string): [number, number] {
   return [lo, hi];
 }
 
-export function HomeView({ page, filters }: Props) {
+export async function HomeView({ page, filters }: Props) {
+  const vehicles = await getVehicles();
   const allBrands = [...new Set(vehicles.map((v) => getBrand(v.name)))].sort();
   const allFuels = [...new Set(vehicles.map((v) => v.fuel))].sort();
   const allYears = [...new Set(vehicles.map((v) => parseInt(v.year)))].sort((a, b) => a - b);
@@ -113,8 +114,7 @@ export function HomeView({ page, filters }: Props) {
               </span>
               <h4 className="mb-2 text-lg font-bold">Garantía Extendida</h4>
               <p className="font-label text-sm text-secondary">
-                Todos nuestros vehículos incluyen 24 meses de garantía técnica
-                completa.
+                Todos nuestros vehículos incluyen garantía técnica completa.
               </p>
             </div>
             <div>
@@ -123,8 +123,7 @@ export function HomeView({ page, filters }: Props) {
               </span>
               <h4 className="mb-2 text-lg font-bold">Certificación 150 Puntos</h4>
               <p className="font-label text-sm text-secondary">
-                Inspección rigurosa realizada por expertos para asegurar el
-                máximo rendimiento.
+                Inspección rigurosa realizada por expertos para asegurar el máximo rendimiento.
               </p>
             </div>
             <div>
@@ -170,64 +169,26 @@ export function HomeView({ page, filters }: Props) {
                 mail
               </span>
             </div>
-            <a
-              href="tel:+34600749009"
-              className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600"
-            >
-              <span className="material-symbols-outlined text-base text-primary">call</span>
-              +34 600 749 009
-            </a>
+            
           </div>
-          <div className="grid grid-cols-2 gap-8">
-            <div>
-              <h5 className="mb-4 font-bold text-zinc-900">Navegación</h5>
-              <ul className="space-y-2 font-['Inter'] text-sm text-zinc-500">
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Inventario
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Financiación
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Vende tu coche
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Servicios
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="mb-4 font-bold text-zinc-900">Empresa</h5>
-              <ul className="space-y-2 font-['Inter'] text-sm text-zinc-500">
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Sobre Nosotros
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Sedes
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-zinc-900" href="#">
-                    Contacto
-                  </a>
-                </li>
-              </ul>
+          <div className="grid grid-cols-1 gap-8">
+            <div className="space-y-4">
+              <h5 className="font-bold text-zinc-900 dark:text-white">Contacto</h5>
+              <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+                <span className="material-symbols-outlined detail-icons scale-75 text-primary">
+                  location_on
+                </span>
+                C. de las Islas Cíes, 4, 28970 Humanes de Madrid, Madrid
+              </div>
+              <a
+                href="tel:+34600749009"
+                className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
+              >
+                <span className="material-symbols-outlined detail-icons scale-75 text-primary">
+                  call
+                </span>
+                +34 600 749 009
+              </a>
             </div>
           </div>
           <div className="space-y-4">
@@ -258,9 +219,6 @@ export function HomeView({ page, filters }: Props) {
             </a>
             <a className="hover:text-zinc-900" href="#">
               Términos
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Mapa del Sitio
             </a>
           </div>
         </div>

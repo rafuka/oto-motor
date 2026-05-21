@@ -74,26 +74,6 @@ export function VehicleHeroGallery({ vehicle: v }: Props) {
         >
           <span className="material-symbols-outlined detail-icons text-[22px]">chevron_right</span>
         </button>
-
-        <div
-          className="absolute bottom-4 left-1/2 z-[2] flex -translate-x-1/2 gap-1.5"
-          role="tablist"
-          aria-label="Galería del vehículo"
-        >
-          {slides.map((s, i) => (
-            <button
-              key={s.key}
-              type="button"
-              role="tab"
-              aria-selected={i === index}
-              aria-label={`Foto ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                i === index ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Thumbnails — right side; 1 col on mobile, 2 cols on md, 3 cols on lg */}

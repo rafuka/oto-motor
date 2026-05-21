@@ -134,7 +134,7 @@ export function HeroBannerGallery({ items }: Props) {
                 chevron_right
               </span>
             </button>
-            <div
+            {/* <div
               className="hidden sm:flex absolute bottom-3 left-1/2 z-[2] -translate-x-1/2 gap-1.5"
               role="tablist"
               aria-label="Seleccionar imagen del banner"
@@ -154,7 +154,7 @@ export function HeroBannerGallery({ items }: Props) {
                   }`}
                 />
               ))}
-            </div>
+            </div> */}
           </>
         )}
       </div>
@@ -172,9 +172,9 @@ export function HeroBannerGallery({ items }: Props) {
             <div className="kinetic-gradient text-white relative overflow-hidden rounded-xl shadow-xl">
               <div className={`relative ${BUBBLE_MIN_H} w-full`}>
                   <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
-                    <p className="font-label text-[10px] sm:text-xs font-medium uppercase tracking-widest opacity-80">
+                    {/* <p className="font-label text-[10px] sm:text-xs font-medium uppercase tracking-widest opacity-80">
                       {label}
-                    </p>
+                    </p> */}
                     <p className="mt-1 text-md sm:text-xl font-bold leading-tight">
                       {current.name}
                     </p>
