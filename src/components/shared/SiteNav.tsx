@@ -17,7 +17,12 @@ export function SiteNav({ activePage }: Props) {
     <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 sm:px-8 py-4">
         <Link href="/">
-          <Image src="/horizontal_logo.svg" alt="OTO MOTOR" width={210} height={100} />
+          <Image
+            src="/horizontal_logo.svg"
+            alt="Oto Motor — Concesionario de coches de ocasión en Madrid"
+            width={210}
+            height={100}
+          />
         </Link>
 
         <div className="hidden items-center space-x-8 md:flex">
@@ -54,8 +59,12 @@ export function SiteNav({ activePage }: Props) {
         <div className="flex items-center">
           <a
             href="#contacto"
-            className="kinetic-gradient rounded-lg px-6 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
+            className="flex ites-center gap-2 kinetic-gradient rounded-lg px-5 py-2 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
           >
+            <span className="material-symbols-outlined text-xs detail-icons scale-60 text-white">
+              call
+            </span>
+            {" "}
             Contáctanos
           </a>
         </div>

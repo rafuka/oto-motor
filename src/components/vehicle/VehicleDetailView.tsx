@@ -1,15 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
 import { SiteNav } from "@/components/shared/SiteNav";
-import { formatKm, type Vehicle } from "@/lib/vehicles";
+import { SiteFooter } from "@/components/shared/SiteFooter";
+import { formatKm, getBrand, type Vehicle } from "@/lib/vehicles";
+import { SITE_URL } from "@/lib/site";
+import {
+  breadcrumbJsonLd,
+  jsonLdScript,
+  vehicleJsonLd,
+} from "@/lib/seo";
 
 const WHATSAPP_NUMBER = "34600749009";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
-type Props = { vehicle: Vehicle };
+type Props = { vehicle: Vehicle; related?: Vehicle[] };
 
-export function VehicleDetailView({ vehicle: v }: Props) {
+export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
   const d = v.detail;
+  const brand = getBrand(v.name);
 
   const vehicleUrl = `${SITE_URL}/vehiculo/${v.id}`;
   const whatsappMessage =
@@ -24,16 +32,53 @@ export function VehicleDetailView({ vehicle: v }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript([
+          vehicleJsonLd(v),
+          breadcrumbJsonLd([
+            { name: "Inicio", url: "/" },
+            { name: brand, url: `/?marca=${encodeURIComponent(brand)}` },
+            { name: v.name, url: `/vehiculo/${v.id}` },
+          ]),
+        ])}
+      />
       <SiteNav />
 
       <main className="selection:bg-primary-container selection:text-white pb-16 pt-24 font-body text-on-surface">
         <section className="mx-auto mb-12 max-w-screen-2xl px-8">
+          <nav
+            aria-label="Migas de pan"
+            className="mb-6 text-xs text-on-surface-variant"
+          >
+            <ol className="flex flex-wrap items-center gap-1">
+              <li>
+                <Link href="/" className="hover:text-primary">
+                  Inicio
+                </Link>
+              </li>
+              <li aria-hidden>›</li>
+              <li>
+                <Link
+                  href={`/?marca=${encodeURIComponent(brand)}`}
+                  className="hover:text-primary"
+                >
+                  {brand}
+                </Link>
+              </li>
+              <li aria-hidden>›</li>
+              <li className="text-on-surface" aria-current="page">
+                {v.name}
+              </li>
+            </ol>
+          </nav>
+
           {/* Title + CTA row */}
           <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-start">
             <div className="md:flex-1">
-       
-              <h1 className="text-on-surface mt-2 text-4xl font-black italic tracking-tighter sm:text-5xl">
-                {v.name.toUpperCase()}
+
+              <h1 className="text-on-surface mt-2 text-4xl font-black italic uppercase tracking-tighter sm:text-5xl">
+                {v.name}
               </h1>
               <p className="font-label mt-2 text-sm text-on-surface-variant">
                 {d.heroSubtitle}
@@ -175,44 +220,53 @@ export function VehicleDetailView({ vehicle: v }: Props) {
             </div>
           </div>
         </section>
+
+        {related.length > 0 && (
+          <section className="mx-auto mt-20 max-w-screen-2xl px-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">
+              Más {brand}
+            </span>
+            <h2 className="text-on-surface mb-8 mt-2 text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">
+              Vehículos similares
+            </h2>
+            <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((r) => (
+                <li key={r.id}>
+                  <Link
+                    href={`/vehiculo/${r.id}`}
+                    className="group block overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                  >
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={r.image}
+                        alt={r.imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="text-base font-bold text-on-surface">
+                          {r.name}
+                        </h3>
+                        <span className="whitespace-nowrap text-base font-bold text-primary">
+                          {r.price}
+                        </span>
+                      </div>
+                      <p className="font-label mt-2 text-xs text-on-surface-variant">
+                        {r.year} · {formatKm(r.km)} · {r.fuel}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
 
-      <footer id="contacto" className="mt-auto w-full bg-zinc-100 dark:bg-zinc-900">
-        <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-8 px-12 py-16 md:grid-cols-3">
-          <div className="space-y-4">
-            <div className="text-xl font-bold text-zinc-900 dark:text-white">
-              OTO MOTOR
-            </div>
-            <p className="font-['Inter'] text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-              Tu destino premium para vehículos de ocasión garantizados.
-              Experiencia y confianza en cada kilómetro.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <h4 className="font-bold text-zinc-900 dark:text-white">Contacto</h4>
-            <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-              <span className="material-symbols-outlined detail-icons scale-75 text-primary">
-                location_on
-              </span>
-              C. de las Islas Cíes, 4, 28970 Humanes de Madrid, Madrid
-            </div>
-            <a
-              href="tel:+34600749009"
-              className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
-            >
-              <span className="material-symbols-outlined detail-icons scale-75 text-primary">
-                call
-              </span>
-              +34 600 749 009
-            </a>
-          </div>
-        </div>
-        <div className="border-t border-zinc-200 px-12 py-6 dark:border-zinc-800">
-          <p className="text-center font-['Inter'] text-sm text-zinc-500 dark:text-zinc-400">
-            © 2026 Oto Motor. Todos los derechos reservados.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter newsletterSource="vehicle_detail" />
     </>
   );
 }

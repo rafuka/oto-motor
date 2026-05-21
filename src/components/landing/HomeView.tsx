@@ -4,6 +4,9 @@ import { VehiclePagination } from "@/components/landing/VehiclePagination";
 import { getVehicles, getBrand, parsePrice } from "@/lib/vehicles";
 import { VehicleFilters } from "@/components/landing/VehicleFilters";
 import { SiteNav } from "@/components/shared/SiteNav";
+import { SiteFooter } from "@/components/shared/SiteFooter";
+import { HomeFaq, HOMEPAGE_FAQS } from "@/components/landing/HomeFaq";
+import { faqJsonLd, itemListJsonLd, jsonLdScript } from "@/lib/seo";
 
 const PAGE_SIZE = 12;
 
@@ -51,8 +54,18 @@ export async function HomeView({ page, filters }: Props) {
   const safePage = Math.min(Math.max(1, page), totalPages);
   const pageVehicles = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
+  const stockCount = vehicles.length;
+  const brandCount = allBrands.length;
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript([
+          itemListJsonLd(vehicles),
+          faqJsonLd(HOMEPAGE_FAQS),
+        ])}
+      />
       <SiteNav activePage="inventario" />
 
       <main className="pt-24">
@@ -60,13 +73,40 @@ export async function HomeView({ page, filters }: Props) {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="z-10">
               <h1 className="text-on-surface text-5xl sm:text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
-                Coches de ocasión garantizados y al{" "}
-                <i className="not-italic text-primary">mejor precio</i>
+                Coches de ocasión en Madrid{" "}
+                <i className="not-italic text-primary">garantizados al mejor precio</i>
               </h1>
               <p className="mt-6 max-w-xl text-xl text-secondary">
-                Encuentra el coche de tus sueños con la mejor garantía y
-                confianza del mercado.
+                Vehículos premium de más de {brandCount} marcas
+                disponibles. Garantía técnica completa y
+                financiación a medida. Entrega a nivel nacional.
               </p>
+              <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 text-sm">
+                <div>
+                  <dt className="font-label text-xs uppercase tracking-widest text-secondary">
+                    En stock
+                  </dt>
+                  <dd className="text-2xl font-black text-on-surface">
+                    {stockCount}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-label text-xs uppercase tracking-widest text-secondary">
+                    Marcas
+                  </dt>
+                  <dd className="text-2xl font-black text-on-surface">
+                    {brandCount}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-label text-xs uppercase tracking-widest text-secondary">
+                    Garantía
+                  </dt>
+                  <dd className="text-2xl font-black text-on-surface">
+                    hasta 24 meses
+                  </dd>
+                </div>
+              </dl>
             </div>
             <HeroBannerGallery items={vehicles} />
           </div>
@@ -148,81 +188,11 @@ export async function HomeView({ page, filters }: Props) {
             </div>
           </div>
         </section>
+
+        <HomeFaq />
       </main>
 
-      <footer id="contacto" className="mt-auto w-full bg-zinc-100">
-        <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-8 px-12 py-16 md:grid-cols-3">
-          <div className="space-y-4">
-            <div className="text-xl font-bold text-zinc-900">OTO MOTOR</div>
-            <p className="max-w-xs font-['Inter'] text-sm text-zinc-500">
-              Tu destino premium para vehículos de alto rendimiento y lujo en
-              España. Experiencia y confianza en cada kilómetro.
-            </p>
-            <div className="flex space-x-4">
-              <span className="material-symbols-outlined cursor-pointer text-zinc-400 hover:text-red-600">
-                public
-              </span>
-              <span className="material-symbols-outlined cursor-pointer text-zinc-400 hover:text-red-600">
-                share
-              </span>
-              <span className="material-symbols-outlined cursor-pointer text-zinc-400 hover:text-red-600">
-                mail
-              </span>
-            </div>
-            
-          </div>
-          <div className="grid grid-cols-1 gap-8">
-            <div className="space-y-4">
-              <h5 className="font-bold text-zinc-900 dark:text-white">Contacto</h5>
-              <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-                <span className="material-symbols-outlined detail-icons scale-75 text-primary">
-                  location_on
-                </span>
-                C. de las Islas Cíes, 4, 28970 Humanes de Madrid, Madrid
-              </div>
-              <a
-                href="tel:+34600749009"
-                className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
-              >
-                <span className="material-symbols-outlined detail-icons scale-75 text-primary">
-                  call
-                </span>
-                +34 600 749 009
-              </a>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <h5 className="font-bold text-zinc-900">Suscríbete al Newsletter</h5>
-            <p className="font-['Inter'] text-sm text-zinc-500">
-              Recibe ofertas exclusivas y nuevos ingresos antes que nadie.
-            </p>
-            <div className="flex">
-              <input
-                className="w-full rounded-l-lg border-none bg-white p-3 text-sm focus:ring-1 focus:ring-red-600"
-                placeholder="Email"
-                type="email"
-              />
-              <button
-                type="button"
-                className="rounded-r-lg bg-zinc-900 px-4 text-white transition-colors hover:bg-zinc-800"
-              >
-                <span className="material-symbols-outlined">send</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between border-t border-zinc-200 px-12 py-8 font-['Inter'] text-xs text-zinc-500 md:flex-row">
-          <div>© 2026 Oto Motor. Todos los derechos reservados.</div>
-          <div className="mt-4 flex space-x-6 md:mt-0">
-            <a className="hover:text-zinc-900" href="#">
-              Privacidad
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Términos
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter newsletterSource="home" />
     </>
   );
 }

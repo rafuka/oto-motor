@@ -3,8 +3,16 @@ import { HomeView } from "@/components/landing/HomeView";
 import { searchParamsCache } from "@/lib/search-params";
 
 export const metadata: Metadata = {
-  title: "Consesionario Oto Motor",
-  description: "Los mejores coches usados de ocasión en buen estado.",
+  title: "Inventario — Coches de Ocasión en Madrid",
+  description:
+    "Explora más de 60 coches de ocasión garantizados en Humanes de Madrid. Audi, BMW, Mercedes, Porsche, Cupra y más, con financiación a medida.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Inventario — Coches de Ocasión en Madrid | Oto Motor",
+    description:
+      "Más de 60 coches de ocasión garantizados en Madrid. Audi, BMW, Mercedes, Porsche y más.",
+    url: "/",
+  },
 };
 
 export default async function Home({

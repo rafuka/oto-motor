@@ -28,3 +28,12 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(24px);
 }
+
+/* Hide scrollbar on horizontal carousels while keeping native scroll/drag. */
+.thumb-strip {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.thumb-strip::-webkit-scrollbar {
+  display: none;
+}

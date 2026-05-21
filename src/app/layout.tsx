@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
+import { SITE_URL, SITE_NAME, SITE_LOCALE } from "@/lib/site";
+import {
+  autoDealerJsonLd,
+  jsonLdScript,
+  organizationJsonLd,
+} from "@/lib/seo";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -16,12 +22,47 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oto Motor",
-    template: "%s | Oto Motor",
+    default: `${SITE_NAME} — Coches de Ocasión Garantizados en Madrid`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Consesionario de coches de ocasión garantizados al mejor precio. Oto Motor.",
+    "Concesionario de coches de ocasión garantizados en Madrid. Audi, BMW, Mercedes, Porsche y más. Financiación a medida y entrega inmediata.",
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: "website",
+    locale: SITE_LOCALE,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Coches de Ocasión Garantizados en Madrid`,
+    description:
+      "Concesionario de coches de ocasión garantizados en Madrid. Audi, BMW, Mercedes, Porsche y más.",
+    images: [
+      {
+        url: "/oto_motor_logo.jpg",
+        width: 561,
+        height: 421,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Coches de Ocasión Garantizados en Madrid`,
+    description:
+      "Concesionario de coches de ocasión garantizados en Madrid.",
+    images: ["/oto_motor_logo.jpg"],
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#b90027",
 };
 
 export default function RootLayout({
@@ -30,11 +71,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="light scroll-smooth">
+    <html lang="es" className="light scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300..400,0..1,0"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript([
+            organizationJsonLd(),
+            autoDealerJsonLd(),
+          ])}
         />
       </head>
       <body
