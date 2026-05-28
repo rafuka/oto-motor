@@ -22,7 +22,7 @@ export function GridVehicle({ vehicle: v }: Props) {
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        {v.badge && (
+        {/* {v.badge && (
           <div
             className={`absolute left-4 top-4 rounded px-2 py-1 text-[10px] font-bold uppercase tracking-widest ${
               v.badge.variant === "primary"
@@ -32,11 +32,11 @@ export function GridVehicle({ vehicle: v }: Props) {
           >
             {v.badge.text}
           </div>
-        )}
+        )} */}
       </div>
       <div className="p-6">
         <div className="mb-2 flex items-start justify-between">
-          <h3 className="text-xl font-bold text-on-surface">{v.name}</h3>
+          <h3 className="text-xl font-bold text-on-surface max-w-[180px]">{v.name}</h3>
           <span className="text-xl font-bold text-primary">{v.price}</span>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">

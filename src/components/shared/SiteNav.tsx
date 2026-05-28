@@ -15,13 +15,22 @@ type Props = {
 export function SiteNav({ activePage }: Props) {
   return (
     <nav className="fixed top-0 z-50 w-full glass-nav shadow-sm">
-      <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 sm:px-8 py-4">
-        <Link href="/">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 sm:px-6 py-4">
+        <Link href="/" className="hidden sm:flex">
           <Image
             src="/horizontal_logo.svg"
             alt="Oto Motor — Concesionario de coches de ocasión en Madrid"
             width={210}
             height={100}
+          />
+        </Link>
+
+        <Link href="/" className="sm:hidden">
+          <Image
+            src="/horizontal_logo.svg"
+            alt="Oto Motor — Concesionario de coches de ocasión en Madrid"
+            width={160}
+            height={77}
           />
         </Link>
 

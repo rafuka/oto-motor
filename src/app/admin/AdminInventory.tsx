@@ -74,7 +74,9 @@ function ListedSwitch({
           }`}
         />
       </button>
-      <span className="text-xs font-medium text-zinc-700">Listado</span>
+      <span className="hidden text-xs font-medium text-zinc-700 sm:inline">
+        Listado
+      </span>
     </label>
   );
 }
@@ -96,7 +98,7 @@ function Row({
           expanded ? "bg-zinc-50" : "hover:bg-zinc-50"
         } ${vehicle.listed ? "" : "opacity-60"}`}
       >
-        <td className="px-4 py-3">
+        <td className="px-2 py-3 sm:px-4">
           <div className="relative h-14 w-20 overflow-hidden rounded-md bg-zinc-100">
             <Image
               src={vehicle.image}
@@ -107,21 +109,31 @@ function Row({
             />
           </div>
         </td>
-        <td className="px-4 py-3">
+        <td className="px-2 py-3 sm:px-4">
           <div className="font-medium text-zinc-900">{vehicle.name}</div>
-          <div className="font-mono text-xs text-zinc-500">{vehicle.id}</div>
+          <div className="hidden font-mono text-xs text-zinc-500 sm:block">
+            {vehicle.id}
+          </div>
         </td>
-        <td className="px-4 py-3 text-zinc-700">{vehicle.year}</td>
-        <td className="px-4 py-3 text-zinc-700">{formatKm(vehicle.km)}</td>
-        <td className="px-4 py-3 text-zinc-700">{vehicle.fuel}</td>
-        <td className="px-4 py-3 font-semibold text-zinc-900">{vehicle.price}</td>
-        <td className="px-4 py-3">
+        <td className="hidden px-4 py-3 text-zinc-700 ">
+          {vehicle.year}
+        </td>
+        <td className="hidden px-4 py-3 text-zinc-700 lg:table-cell">
+          {formatKm(vehicle.km)}
+        </td>
+        <td className="hidden px-4 py-3 text-zinc-700 xl:table-cell">
+          {vehicle.fuel}
+        </td>
+        <td className="hidden px-4 py-3 font-semibold text-zinc-900 sm:table-cell">
+          {vehicle.price}
+        </td>
+        <td className="px-2 py-3 sm:px-4">
           <ListedSwitch
             vehicleId={vehicle.id}
             initialListed={vehicle.listed}
           />
         </td>
-        <td className="px-4 py-3 text-right text-zinc-400">
+        <td className="px-2 py-3 text-right text-zinc-400 sm:px-4">
           <span
             className="material-symbols-outlined text-xl"
             aria-hidden
@@ -220,16 +232,16 @@ export function AdminInventory({ vehicles }: { vehicles: AdminVehicle[] }) {
         {query ? ` para "${query}"` : ""}.
       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+      <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
         <table className="w-full text-left text-sm">
           <thead className="bg-zinc-50 text-xs uppercase tracking-wider text-zinc-500">
             <tr>
               <th className="px-4 py-3">Imagen</th>
               <th className="px-4 py-3">Nombre</th>
-              <th className="px-4 py-3">Año</th>
-              <th className="px-4 py-3">KM</th>
-              <th className="px-4 py-3">Combustible</th>
-              <th className="px-4 py-3">Precio</th>
+              <th className="hidden px-4 py-3 md:table-cell">Año</th>
+              <th className="hidden px-4 py-3 lg:table-cell">KM</th>
+              <th className="hidden px-4 py-3 xl:table-cell">Combustible</th>
+              <th className="hidden px-4 py-3 sm:table-cell">Precio</th>
               <th className="px-4 py-3">Estado</th>
               <th className="px-4 py-3" />
             </tr>

@@ -43,7 +43,6 @@ export function SingleImageUploader({
               fill
               sizes="160px"
               className="object-cover"
-              unoptimized
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-xs text-zinc-400">
@@ -168,7 +167,6 @@ export function GalleryImageUploader({
               fill
               sizes="200px"
               className="object-cover"
-              unoptimized
             />
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-1 bg-zinc-900/70 px-1.5 py-1 text-[10px] font-semibold text-white opacity-0 transition-opacity group-hover:opacity-100">
               <div className="flex gap-1">

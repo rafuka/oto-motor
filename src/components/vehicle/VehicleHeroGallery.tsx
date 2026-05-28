@@ -223,7 +223,7 @@ export function VehicleHeroGallery({ vehicle: v }: Props) {
   return (
     <div className="flex flex-col gap-4">
       {/* Main image */}
-      <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-xl shadow-2xl">
+      <div className="group relative aspect-[16/9] w-[100vw] sm:w-full -mx-6 sm:mx-0 overflow-hidden sm:rounded-xl shadow-2xl">
         <AnimatePresence initial={false} mode="sync">
           <motion.div
             key={current.key}

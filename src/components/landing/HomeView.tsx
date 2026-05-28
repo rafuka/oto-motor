@@ -6,6 +6,7 @@ import { VehicleFilters } from "@/components/landing/VehicleFilters";
 import { SiteNav } from "@/components/shared/SiteNav";
 import { SiteFooter } from "@/components/shared/SiteFooter";
 import { HomeFaq, HOMEPAGE_FAQS } from "@/components/landing/HomeFaq";
+import { SortBy } from "@/components/landing/SortBy";
 import { faqJsonLd, itemListJsonLd, jsonLdScript } from "@/lib/seo";
 
 const PAGE_SIZE = 12;
@@ -17,6 +18,7 @@ type FilterState = {
   yearTo: string;
   fuel: string;
   precio: string;
+  sort: string;
 };
 type Props = { page: number; filters: FilterState };
 
@@ -32,7 +34,7 @@ export async function HomeView({ page, filters }: Props) {
   const allFuels = [...new Set(vehicles.map((v) => v.fuel))].sort();
   const allYears = [...new Set(vehicles.map((v) => parseInt(v.year)))].sort((a, b) => a - b);
 
-  const filtered = vehicles.filter((v) => {
+  let filtered = vehicles.filter((v) => {
     if (filters.marca && getBrand(v.name) !== filters.marca) return false;
     if (filters.km) {
       const [lo, hi] = parseRange(filters.km);
@@ -49,6 +51,51 @@ export async function HomeView({ page, filters }: Props) {
     }
     return true;
   });
+
+  // Compare two numeric values; unparseable / NaN entries are pushed to the
+  // bottom regardless of direction so a missing price/year never floats above
+  // a real one.
+  const compareNumeric = (
+    a: number | null,
+    b: number | null,
+    dir: 1 | -1,
+  ) => {
+    if (a === null && b === null) return 0;
+    if (a === null) return 1;
+    if (b === null) return -1;
+    return (a - b) * dir;
+  };
+  const yearOf = (s: string) => {
+    const n = parseInt(s, 10);
+    return Number.isFinite(n) ? n : null;
+  };
+
+  switch (filters.sort) {
+    case "price-asc":
+    case "price-desc": {
+      const dir = filters.sort === "price-asc" ? 1 : -1;
+      filtered = [...filtered].sort((a, b) =>
+        compareNumeric(parsePrice(a.price), parsePrice(b.price), dir),
+      );
+      break;
+    }
+    case "year-desc":
+    case "year-asc": {
+      const dir = filters.sort === "year-asc" ? 1 : -1;
+      filtered = [...filtered].sort((a, b) =>
+        compareNumeric(yearOf(a.year), yearOf(b.year), dir),
+      );
+      break;
+    }
+    case "km-asc":
+    case "km-desc": {
+      const dir = filters.sort === "km-asc" ? 1 : -1;
+      filtered = [...filtered].sort((a, b) =>
+        compareNumeric(a.km, b.km, dir),
+      );
+      break;
+    }
+  }
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const safePage = Math.min(Math.max(1, page), totalPages);
@@ -126,6 +173,13 @@ export async function HomeView({ page, filters }: Props) {
               />
 
               <div className="min-w-0 flex-1">
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                  <p className="font-label text-sm text-on-surface-variant">
+                    {filtered.length}{" "}
+                    {filtered.length === 1 ? "vehículo" : "vehículos"}
+                  </p>
+                  <SortBy />
+                </div>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
                   {pageVehicles.map((v) => (
                     <GridVehicle key={v.id} vehicle={v} />

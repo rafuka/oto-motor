@@ -8,6 +8,8 @@ import {
   jsonLdScript,
   organizationJsonLd,
 } from "@/lib/seo";
+import { MetaPixel } from "@/components/shared/MetaPixel";
+import { CookieBanner } from "@/components/shared/CookieBanner";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -89,6 +91,8 @@ export default function RootLayout({
         className={`${plusJakarta.variable} ${inter.variable} bg-surface font-body text-on-surface antialiased`}
       >
         <NuqsAdapter>{children}</NuqsAdapter>
+        <MetaPixel />
+        <CookieBanner />
         <a
           href="https://wa.me/34600749009"
           target="_blank"

@@ -20,13 +20,13 @@ export default async function Home({
 }: {
   searchParams: Promise<Record<string, string | string[]>>;
 }) {
-  const { page, marca, km, yearFrom, yearTo, fuel, precio } =
+  const { page, marca, km, yearFrom, yearTo, fuel, precio, sort } =
     await searchParamsCache.parse(searchParams);
 
   return (
     <HomeView
       page={page}
-      filters={{ marca, km, yearFrom, yearTo, fuel, precio }}
+      filters={{ marca, km, yearFrom, yearTo, fuel, precio, sort }}
     />
   );
 }

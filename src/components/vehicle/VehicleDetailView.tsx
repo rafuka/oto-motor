@@ -46,7 +46,7 @@ export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
       <SiteNav />
 
       <main className="selection:bg-primary-container selection:text-white pb-16 pt-24 font-body text-on-surface">
-        <section className="mx-auto mb-12 max-w-screen-2xl px-8">
+        <section className="mx-auto mb-12 max-w-screen-2xl px-6 sm:px-8">
           <nav
             aria-label="Migas de pan"
             className="mb-6 text-xs text-on-surface-variant"
@@ -112,7 +112,7 @@ export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
         </section>
 
         <section className="mb-20 bg-surface-container-low py-4 sm:py-20">
-          <div className="mx-auto max-w-screen-2xl px-8">
+          <div className="mx-auto max-w-screen-2xl px-6 sm:px-8">
             <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row">
               <div className="max-w-2xl">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary">
@@ -172,7 +172,7 @@ export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-screen-2xl grid-cols-1 lg:grid-cols-12 items-center gap-16 px-8">
+        <section className="mx-auto grid max-w-screen-2xl grid-cols-1 lg:grid-cols-12 items-center gap-16 px-6 sm:px-8">
           <div className="order-2 col-span-1 lg:order-1 lg:col-span-5">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">
               La Experiencia
@@ -222,7 +222,7 @@ export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
         </section>
 
         {related.length > 0 && (
-          <section className="mx-auto mt-20 max-w-screen-2xl px-8">
+          <section className="mx-auto mt-20 max-w-screen-2xl px-6 sm:px-8">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">
               Más {brand}
             </span>

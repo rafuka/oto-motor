@@ -15,7 +15,7 @@ export default async function AdminDashboard() {
   const listedCount = vehicles.filter((v) => v.listed).length;
 
   return (
-    <main className="mx-auto max-w-screen-2xl px-6 py-10">
+    <main className="mx-auto max-w-screen-2xl px-3 py-10 sm:px-6">
       <header className="mb-10 flex flex-wrap items-end justify-between gap-4">
         <div>
           <div className="text-sm font-black tracking-tight text-zinc-900">
