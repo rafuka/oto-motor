@@ -1,6 +1,6 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "http://localhost:3000";
+  "https://otomotor.net";
 
 export const SITE_NAME = "Oto Motor";
 export const SITE_LOCALE = "es_ES";
