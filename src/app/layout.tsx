@@ -9,6 +9,7 @@ import {
   organizationJsonLd,
 } from "@/lib/seo";
 import { MetaPixel } from "@/components/shared/MetaPixel";
+import { ClarityAnalytics } from "@/components/shared/Clarity";
 import { CookieBanner } from "@/components/shared/CookieBanner";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -91,6 +92,7 @@ export default function RootLayout({
         className={`${plusJakarta.variable} ${inter.variable} bg-surface font-body text-on-surface antialiased`}
       >
         <NuqsAdapter>{children}</NuqsAdapter>
+        <ClarityAnalytics />
         <MetaPixel />
         <CookieBanner />
         <a
