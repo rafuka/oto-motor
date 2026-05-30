@@ -5,12 +5,12 @@ import { searchParamsCache } from "@/lib/search-params";
 export const metadata: Metadata = {
   title: "Coches de Ocasión en Madrid",
   description:
-    "Explora más de 60 coches de ocasión garantizados en Humanes de Madrid. Audi, BMW, Mercedes, Porsche, Cupra y más, con financiación a medida.",
+    "Explora nuestros coches de ocasión garantizados y con financiación a medida. Envios a nivel nacional desde Madrid. Audi, BMW, Mercedes, Porsche, Cupra y más.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Coches de Ocasión en Madrid | Oto Motor",
     description:
-      "Más de 60 coches de ocasión garantizados en Madrid. Audi, BMW, Mercedes, Porsche y más.",
+      "Coches de ocasión garantizados en Madrid. Audi, BMW, Mercedes, Porsche y más.",
     url: "/",
   },
 };
