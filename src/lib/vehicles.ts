@@ -110,12 +110,6 @@ export function formatKm(km: number): string {
   return km.toLocaleString("es-ES") + " km";
 }
 
-export function formatFinancing(financing?: string | null): string | null {
-  const amount = financing?.trim();
-  if (!amount) return null;
-  return `desde ${amount}/mes`;
-}
-
 const MULTI_WORD_BRANDS = ["Alfa Romeo"];
 
 export function getBrand(name: string): string {
