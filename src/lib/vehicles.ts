@@ -31,6 +31,7 @@ export type Vehicle = {
     };
     narrativeImage: string;
     narrativeImageAlt: string;
+    financing?: string | null;
   };
 };
 
@@ -107,6 +108,12 @@ export async function getVehicle(id: string): Promise<Vehicle | null> {
 
 export function formatKm(km: number): string {
   return km.toLocaleString("es-ES") + " km";
+}
+
+export function formatFinancing(financing?: string | null): string | null {
+  const amount = financing?.trim();
+  if (!amount) return null;
+  return `desde ${amount}/mes`;
 }
 
 const MULTI_WORD_BRANDS = ["Alfa Romeo"];

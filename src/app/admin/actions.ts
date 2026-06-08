@@ -120,6 +120,7 @@ async function upsertFromForm(
       },
       narrativeImage: get("narrative_image") || images[0],
       narrativeImageAlt: get("narrative_image_alt") || name,
+      financing: get("financing") || null,
     },
     listed: get("listed") !== "false",
   };

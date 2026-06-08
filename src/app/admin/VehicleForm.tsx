@@ -310,6 +310,12 @@ export function VehicleForm({ mode, vehicle, onSaved }: Props) {
           placeholder="56.900 €"
           defaultValue={d?.priceLine}
         />
+        <Field
+          label='Financiación: solo el importe, opcional (se muestra como "desde …/mes")'
+          name="financing"
+          placeholder="450 €"
+          defaultValue={d?.financing ?? undefined}
+        />
       </fieldset>
 
       <fieldset className="space-y-4">

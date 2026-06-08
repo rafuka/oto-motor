@@ -3,7 +3,7 @@ import Link from "next/link";
 import { VehicleHeroGallery } from "@/components/vehicle/VehicleHeroGallery";
 import { SiteNav } from "@/components/shared/SiteNav";
 import { SiteFooter } from "@/components/shared/SiteFooter";
-import { formatKm, getBrand, type Vehicle } from "@/lib/vehicles";
+import { formatFinancing, formatKm, getBrand, type Vehicle } from "@/lib/vehicles";
 import { SITE_URL } from "@/lib/site";
 import {
   breadcrumbJsonLd,
@@ -84,6 +84,14 @@ export function VehicleDetailView({ vehicle: v, related = [] }: Props) {
                 {d.heroSubtitle}
               </p>
               <p className="mt-3 text-2xl font-black text-primary">{d.priceLine}</p>
+              {formatFinancing(d.financing) && (
+                <p className="font-label mt-1 flex items-center gap-1.5 text-sm font-semibold text-on-surface-variant">
+                  <span className="material-symbols-outlined text-base text-primary">
+                    payments
+                  </span>
+                  Financiación {formatFinancing(d.financing)}
+                </p>
+              )}
             </div>
 
             <div className="w-full space-y-4 rounded-xl bg-surface-container-low p-6 md:flex-1">
