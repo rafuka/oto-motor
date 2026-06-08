@@ -35,9 +35,9 @@ export function GridVehicle({ vehicle: v }: Props) {
         )} */}
       </div>
       <div className="p-6">
-        <div className="mb-2 flex items-start justify-between">
-          <h3 className="text-xl font-bold text-on-surface max-w-[180px]">{v.name}</h3>
-          <div className="flex flex-col items-end">
+        <div className="mb-2">
+          <h3 className="text-xl font-bold text-on-surface">{v.name}</h3>
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="text-xl font-bold text-primary">{v.price}</span>
             {v.detail.financing?.trim() && (
               <span className="font-label inline-flex items-baseline gap-1">
